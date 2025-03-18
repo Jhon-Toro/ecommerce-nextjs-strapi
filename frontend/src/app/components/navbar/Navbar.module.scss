@@ -1,31 +1,129 @@
-// styles/Navbar.module.scss
+@use 'src/styles/utils' as utils;
 
 .navbar {
-    background-color: #333;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: utils.pxToRem(25px) utils.pxToRem(20px);
+  width: 100%;
+  
+  &__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    &-list {
-      list-style: none;
+    @include utils.container();
+  }
+
+  &__brand {
+    font-size: utils.pxToRem(24px);
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    gap: utils.pxToRem(25px);
+    width: 100%;
+  }
+
+  &__item {
+    margin: 0 0;
+    text-wrap-mode: nowrap;
+
+    @include utils.media-ltlg(){
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: utils.pxToRem(16px);
+  }
+  &__link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: utils.pxToRem(4px);
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: utils.pxToRem(62px);
+    padding: 0 utils.pxToRem(10px);
+    width: utils.pxToRem(577px);
+    margin: 0 utils.pxToRem(10px);
+    display: none;
+
+    @include utils.media-sm(){
+      margin: 0;
+    }
+    @include utils.media-lg(){
+      width: utils.pxToRem(230px);
+    }
+
+    @include utils.media-gtxs(){
       display: flex;
-      gap: 20px;
     }
-    
-    &-item {
-      padding: 5px 10px;
+
+  }
+
+  &__search_icon {
+    height: utils.pxToRem(24px);
+    width: utils.pxToRem(24px);
+    margin-left: utils.pxToRem(10px);
+    color: #777;
+    cursor: pointer;
+  }
+
+  &__search_input {
+    width: 100%;
+    border-radius: utils.pxToRem(62px);
+    border: none;
+    font-size: utils.pxToRem(16px);
+    height: utils.pxToRem(40px);
+    padding-left: utils.pxToRem(10px);
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
     }
-    
-    &-link {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    
-      &:hover {
-        text-decoration: underline;
-      }
   }
+
+  &__right_icon{
+    display: flex;
+    gap: utils.pxToRem(8px);
   }
-  
-  
+
+  &__icon {
+    width: utils.pxToRem(24px);
+    height: utils.pxToRem(24px);
+    color: black;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .navbar__list {
+      @include utils.container();
+    }
+
+    .navbar__item {
+      margin-bottom: utils.pxToRem(15px);
+    }
+
+    .navbar__hamburger {
+      display: block;
+      width: 24px;
+      cursor: pointer;
+      height: 24px;
+    }
+  }
+}

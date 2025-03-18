@@ -1,0 +1,15 @@
+{
+    "navbar": [
+      { "label": "Shop", "href": "/" },
+      { "label": "On Sale", "href": "/" },
+      { "label": "New Arrivals", "href": "/about" },
+      { "label": "Brands", "href": "/contact" }
+    ],
+    "sidebar": [
+      { "label": "Shop", "href": "/" },
+      { "label": "On Sale", "href": "/" },
+      { "label": "New Arrivals", "href": "/about" },
+      { "label": "Brands", "href": "/contact" }
+    ]
+  }
+  
