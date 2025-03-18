@@ -40,6 +40,7 @@
     border-radius: utils.pxToRem(4px);
     font-size: utils.pxToRem(24px);
     padding: utils.pxToRem(20px);
+    cursor: pointer;
   }
   
   &__item:hover {
