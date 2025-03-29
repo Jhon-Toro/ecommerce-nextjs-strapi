@@ -45,7 +45,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: utils.pxToRem(16px);
+
+    @include utils.media-ltlg(){
+      gap: utils.pxToRem(16px);
+    }
+    
   }
   &__link {
     color: rgb(0, 0, 0);
