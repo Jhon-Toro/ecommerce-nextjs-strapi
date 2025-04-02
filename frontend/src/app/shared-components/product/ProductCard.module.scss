@@ -1,0 +1,73 @@
+@use 'src/styles/utils' as utils;
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: utils.pxToRem(32px);
+
+
+  &__name {
+    font-size: utils.pxToRem(20px);
+  }
+  &__image {
+    object-fit: cover;
+    border-radius: utils.pxToRem(8px);
+
+    @include utils.media-sm(){
+    width: utils.pxToRem(240px);
+    height: utils.pxToRem(240px);
+    }
+
+    @include utils.media-xs(){
+    width: utils.pxToRem(340px);
+    height: utils.pxToRem(340px);
+    }
+  }
+
+  &__info {
+    margin-top: utils.pxToRem(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: utils.pxToRem(5px);
+
+    &_number {
+      opacity: 60%;
+    }
+  }
+  &__price {
+    font-size: utils.pxToRem(24px);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: utils.pxToRem(10px);
+
+    &_discount {
+      text-decoration: line-through;
+      color: rgb(0, 0, 0);
+      opacity: 40%;
+      font-weight: 600;
+    }
+  }
+
+  &__discount {
+    color: #FF3333;
+    font-weight: normal;
+    background-color: #ff333321;
+    font-size: utils.pxToRem(12px);
+    height: utils.pxToRem(28px);
+    width: utils.pxToRem(58px);
+    border-radius: utils.pxToRem(62px);
+    padding: utils.pxToRem(6px) utils.pxToRem(10px);
+  }
+  
+}

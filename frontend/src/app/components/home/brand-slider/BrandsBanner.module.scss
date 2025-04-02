@@ -1,0 +1,68 @@
+@use "src/styles/utils" as utils;
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  position: relative;
+  background-color: black;
+  padding: utils.pxToRem(42.5px) 0;
+  display: flex;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    transition: transform 0.2s ease-out;
+    @include utils.container();
+
+    @include utils.media-xl() {
+      gap: utils.pxToRem(122px);
+    }
+    @include utils.media-lg() {
+      gap: utils.pxToRem(32px);
+    }
+    @include utils.media-ltlg() {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      grid-template-rows: auto;
+      gap: utils.pxToRem(16px);
+    }
+
+    @include utils.media-xs() {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+    @include utils.media-sm() {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+
+    &_brand {
+      flex-shrink: 0;
+      transition: transform 0.3s ease-out;
+      &:first-child {
+        margin: 0;
+      }
+
+      @include utils.media-ltlg() {
+        margin: 0;
+      }
+    }
+
+    &_image {
+      object-fit: contain;
+      width: max-content;
+
+      @include utils.media-xs() {
+        width: utils.pxToRem(116px);
+        height: utils.pxToRem(23px);
+      }
+      @include utils.media-sm() {
+        width: utils.pxToRem(116px);
+        height: utils.pxToRem(23px);
+      }
+    }
+  }
+}

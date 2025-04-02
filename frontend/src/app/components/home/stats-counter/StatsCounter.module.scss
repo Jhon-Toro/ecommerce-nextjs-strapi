@@ -1,0 +1,39 @@
+@use 'src/styles/utils' as utils;
+
+.stat {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+
+    &__number {
+        font-size: utils.pxToRem(36px);
+        font-weight: 700;
+        color: #000;
+        height: max-content;
+        transition: transform 0.2s ease;
+    }
+
+    &__label {
+        font-size: utils.pxToRem(16px);
+        font-weight: 400;
+        color: #888;
+        text-transform: capitalize;
+    }
+    
+    @include utils.media-ltlg() {
+        &__number {
+            font-size: utils.pxToRem(28px);
+        }
+    
+        &__label {
+            font-size: utils.pxToRem(14px);
+        }
+    }
+
+    &:hover &__number {
+        transform: scale(1.1);
+    }
+
+}

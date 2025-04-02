@@ -1,0 +1,106 @@
+@use 'src/styles/utils' as utils;
+
+.hero{
+    position: relative;
+    overflow: hidden;
+    background-color: #f2f0f1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__image {
+        object-fit: cover;
+        position: absolute;
+        bottom: utils.pxToRem(124px);
+        @include utils.media-ltmd(){
+            display: none;
+        }
+        @include utils.media-lg(){
+            width: utils.pxToRem(1024px);
+            height: utils.pxToRem(576px);
+        }
+
+        @include utils.media-md(){
+            width: utils.pxToRem(768px);
+            height: utils.pxToRem(432px);
+        }
+
+        @include utils.media-sm(){
+            width: utils.pxToRem(576px);
+            height: utils.pxToRem(324px);
+        }
+
+        @include utils.media-xs(){
+            width: utils.pxToRem(376px);
+            height: utils.pxToRem(211.50px);
+        }
+    }
+
+    &__image_mobile {
+        display: none;
+
+        @include utils.media-ltmd(){
+            display: block;
+        }
+        
+        @include utils.media-xs(){
+            width: utils.pxToRem(340px);
+        }
+    }
+
+    &__article {
+        @include utils.container();
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: utils.pxToRem(120px) 0;
+
+        @include utils.media-ltmd(){
+            align-items: center;
+            padding: utils.pxToRem(20px) 0;
+        }
+
+        &_title {
+            font-size: utils.pxToRem(64px);
+            max-width: utils.pxToRem(600px);
+            font-weight: bold;
+            line-height: utils.pxToRem(60px);
+
+            @include utils.media-ltmd(){
+                font-size: utils.pxToRem(36px);
+                line-height: utils.pxToRem(39px);
+            }
+        }
+
+        &_paragraph {
+            font-size: utils.pxToRem(16px);
+            max-width: utils.pxToRem(600px);
+            margin: utils.pxToRem(20px) 0;
+            font-weight: normal;
+            opacity: 60%;
+        }
+
+        &_stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: utils.pxToRem(32px);
+            margin-top: utils.pxToRem(50px);
+
+            @include utils.media-xs(){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;
+                & > :last-child {
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+    
+}

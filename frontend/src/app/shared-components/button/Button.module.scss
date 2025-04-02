@@ -1,0 +1,84 @@
+@use 'src/styles/utils' as utils;
+
+.button {
+  display: inline-block;
+  padding: utils.pxToRem(12px) utils.pxToRem(24px);
+  font-size: utils.pxToRem(16px);
+  font-weight: medium;
+  text-align: center;
+  border-radius: utils.pxToRem(30px);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  border: none;
+  outline: none;
+
+  &--primary {
+    background-color: black;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+
+  &--secondary {
+    background-color: white;
+    color: black;
+    border: utils.pxToRem(1px) solid rgba(0, 0, 0, 0.151);
+    font-weight: medium;
+    font-size: utils.pxToRem(16px);
+    margin: 0 auto;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: black;
+    border: utils.pxToRem(1px) solid black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    color: black;
+    border: none;
+    text-decoration: underline;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  &--extra-small {
+    width: utils.pxToRem(80px);
+    height: utils.pxToRem(30px);
+  }
+
+  &--small {
+    width: utils.pxToRem(120px);
+    height: utils.pxToRem(40px);
+  }
+
+  &--medium {
+    width: utils.pxToRem(210px);
+    height: utils.pxToRem(52px);
+  }
+
+  &--large {
+    width: utils.pxToRem(210px);
+    height: utils.pxToRem(60px);
+  }
+
+  &--extra-large {
+    width: utils.pxToRem(250px);
+    height: utils.pxToRem(70px);
+  }
+}

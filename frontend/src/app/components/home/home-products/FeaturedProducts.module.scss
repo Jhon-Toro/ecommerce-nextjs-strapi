@@ -1,0 +1,49 @@
+@use "src/styles/utils" as utils;
+
+.products {
+  text-align: center;
+  background-color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: utils.pxToRem(20px);
+    justify-items: center;
+    margin-top: utils.pxToRem(20px);
+    @include utils.container();
+
+    @include utils.media-lg() {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include utils.media-md() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include utils.media-sm() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include utils.media-xs() {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__title {
+    font-size: utils.pxToRem(48px);
+    margin: utils.pxToRem(50px) 0;
+  }
+
+  &__hr{
+    opacity: 10%;
+    position: absolute;
+    display: block;
+    top: utils.pxToRem(30px);
+    left: 0;
+    right: 0;
+    @include utils.container();
+
+  }
+}

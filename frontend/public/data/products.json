@@ -1,0 +1,82 @@
+{
+    "newArrivals": [
+      {
+        "id": 1,
+        "name": "T-shirt with Tape Details",
+        "price": 120,
+        "discountPrice": null,
+        "rating": 4.5,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349271/6_gugqsp.svg",
+        "category": "New Arrivals"
+      },
+      {
+        "id": 2,
+        "name": "Skinny Fit Jeans",
+        "price": 240,
+        "discountPrice": 260,
+        "rating": 3.5,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349271/8_vsqgl6.svg",
+        "category": "New Arrivals",
+        "discount": 20
+      },
+      {
+        "id": 3,
+        "name": "Checkered Shirt",
+        "price": 180,
+        "discountPrice": null,
+        "rating": 4.5,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349271/5_bofwcn.svg",
+        "category": "New Arrivals"
+      },
+      {
+        "id": 4,
+        "name": "Sleeve Striped T-shirt",
+        "price": 130,
+        "discountPrice": 160,
+        "rating": 4.5,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349271/4_micvdt.svg",
+        "category": "New Arrivals",
+        "discount": 30
+      }
+    ],
+    "topSelling": [
+      {
+        "id": 5,
+        "name": "Vertical Striped Shirt",
+        "price": 212,
+        "discountPrice": 232,
+        "rating": 5.0,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349273/2_inezfn.svg",
+        "category": "Top Selling",
+        "discount": 20
+      },
+      {
+        "id": 6,
+        "name": "Courage Graphic T-shirt",
+        "price": 145,
+        "discountPrice": null,
+        "rating": 4.0,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349273/3_ldxett.svg",
+        "category": "Top Selling"
+      },
+      {
+        "id": 7,
+        "name": "Loose Fit Bermuda Shorts",
+        "price": 80,
+        "discountPrice": null,
+        "rating": 3.0,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349276/1_tkxuhf.svg",
+        "category": "Top Selling"
+      },
+      {
+        "id": 8,
+        "name": "Faded Skinny Jeans",
+        "price": 210,
+        "discountPrice": null,
+        "rating": 4.5,
+        "image": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743349276/7_mxxnro.svg",
+        "category": "Top Selling"
+      }
+    ]
+}
+  

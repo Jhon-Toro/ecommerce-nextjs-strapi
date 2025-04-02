@@ -1,0 +1,40 @@
+@use 'src/styles/utils' as utils;
+
+.rating {
+  display: flex;
+  align-items: center;
+
+  .star {
+    display: inline-block;
+    margin: 0 utils.pxToRem(2px);
+    transition: transform 0.2s ease;
+
+    &.full {
+      color: #f59e0b;
+    }
+
+    &.empty {
+      color: #d1d5db;
+    }
+
+    &.half {
+      color: #f59e0b;
+      clip-path: inset(0 50% 0 0);
+    }
+  }
+
+  &.small .star {
+    width: utils.pxToRem(16px);
+    height: utils.pxToRem(16px);
+  }
+
+  &.medium .star {
+    width: utils.pxToRem(20px);
+    height: utils.pxToRem(20px);
+  }
+
+  &.extra-medium .star {
+    width: utils.pxToRem(25px);
+    height: utils.pxToRem(25px);
+  }
+}
