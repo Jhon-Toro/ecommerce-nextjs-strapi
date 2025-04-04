@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { MenuData } from './interfaces/menu-data/MenuData.interface';
+import type { MenuData } from './interfaces/menu-data/MenuData.interface';
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import menuData from '../../../assets/menu.json';
 import Sidebar from '../sidebar/Sidebar';

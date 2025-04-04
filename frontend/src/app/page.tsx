@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Hero from "./components/home/hero/Hero";
 import HomeProducts from "./components/home/home-products/FeatuedProducts";
-import { Product } from "./shared-components/product/ProductCard";
+import type { Product } from "./shared-components/product/ProductCard";
+import HomeCategories from "./components/home/home-categories/HomeCategories";
 
 export default function Home() {
   const [products, setProducts] = useState<{ newArrivals: Product[]; topSelling: Product[] } | null>(null);
@@ -25,6 +26,7 @@ export default function Home() {
       <Hero />
       <HomeProducts products={products.newArrivals} category="New Arrivals" />
       <HomeProducts products={products.topSelling} category="Top Selling" />
+      <HomeCategories/>
     </>
   );
 }

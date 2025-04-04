@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react';
-import { StatsCounterProps } from './interfaces/StatsCounterProps';
+import type { StatsCounterProps } from './interfaces/StatsCounterProps';
 import styles from './StatsCounter.module.scss';
 
 const StatsCounter: React.FC<StatsCounterProps> = ({ endValue, label, duration = 2000 }) => {

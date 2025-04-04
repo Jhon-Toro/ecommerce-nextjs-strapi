@@ -1,5 +1,5 @@
 
-import { FeaturedProductsProps } from './interfaces/FeaturedProductsProps.interface';
+import type { FeaturedProductsProps } from './interfaces/FeaturedProductsProps.interface';
 import styles from './FeaturedProducts.module.scss';
 import ProductCard from '@/app/shared-components/product/ProductCard';
 import Button from '@/app/shared-components/button/Button';

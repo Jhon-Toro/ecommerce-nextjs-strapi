@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import styles from './Sidebar.module.scss';
-import { SidebarProps } from './interfaces/sidebar-props/SidebarProps.interface';
+import type { SidebarProps } from './interfaces/sidebar-props/SidebarProps.interface';
 import { XMarkIcon } from '@heroicons/react/16/solid';
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, menu }) => {

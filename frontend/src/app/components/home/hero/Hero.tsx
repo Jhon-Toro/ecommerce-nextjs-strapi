@@ -2,7 +2,7 @@ import Button from '@/app/shared-components/button/Button';
 import styles from './Hero.module.scss';
 import Image from 'next/image';
 import StatsCounter from '../stats-counter/StatsCounter';
-import BrandsBanner from '../brand-slider/BrandsBanner';
+import BrandsBanner from '../brand-banner/BrandsBanner';
 
 const Hero = () => {
   return (

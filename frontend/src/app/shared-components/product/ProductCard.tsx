@@ -1,4 +1,4 @@
-import { Product } from './interfaces/Product.interface';
+import type { Product } from './interfaces/Product.interface';
 import Image from 'next/image';
 import styles from './ProductCard.module.scss';
 import Rating from '../rating/Rating';
