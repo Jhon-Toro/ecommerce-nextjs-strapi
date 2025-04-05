@@ -1,0 +1,65 @@
+@use "src/styles/utils" as utils;
+
+.happy {
+    padding: utils.pxToRem(10px) 0 utils.pxToRem(40px) 0;
+    @include utils.container();
+
+    &__title {
+        font-size: utils.pxToRem(48px);
+        font-weight: bold;
+        margin-bottom: utils.pxToRem(20px);
+        color: black;
+        display: flex;
+        align-items: center;
+        height: max-content;
+        width: 100%;
+        justify-content: space-between;
+
+        &_span {
+            width: max-content;
+            height: max-content;
+
+            @include utils.media-ltlg() {
+                width: utils.pxToRem(400px);
+            }
+        }
+        &_button {
+            height: max-content;
+            width: max-content;
+        }
+    }
+
+    &__container {
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        @include utils.container();
+
+        &_track {
+            display: flex;
+            width: 100%;
+            gap: utils.pxToRem(16px);
+            transform: translateX(calc(-1 * var(--slide-offset, 0)));
+            transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+            @include utils.media-md() {
+                gap: utils.pxToRem(25px);
+            }
+
+            @include utils.media-lg() {
+                gap: utils.pxToRem(25px);
+            }
+
+            @include utils.media-xl() {
+                gap: utils.pxToRem(25px);
+            }
+        }
+
+        &_slide {
+            list-style: none;
+        }
+    }
+}

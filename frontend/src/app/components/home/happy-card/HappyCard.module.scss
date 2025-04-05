@@ -1,0 +1,63 @@
+@use 'src/styles/utils' as utils;
+
+.card {
+    background: #fff;
+    border-radius: utils.pxToRem(20px);
+    padding: utils.pxToRem(20px);
+    border: utils.pxToRem(1px) solid #e6e6e6;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include utils.media-xs(){
+      width: utils.pxToRem(335px);
+      height: utils.pxToRem(240px);
+    }
+    @include utils.media-sm(){
+      width: utils.pxToRem(500px);
+      height: utils.pxToRem(240px);
+    }
+    @include utils.media-md(){
+      width: utils.pxToRem(325px);
+      height: utils.pxToRem(240px);
+    }
+
+    @include utils.media-lg(){
+      width: utils.pxToRem(395px);
+      height: utils.pxToRem(240px);
+    }
+    
+    @include utils.media-xl(){
+      width: utils.pxToRem(410px);
+      height:  utils.pxToRem(240px);
+    }
+
+    .header {
+      display: flex;
+      margin-bottom: utils.pxToRem(10px);
+      flex-direction: column;
+    }
+  
+    .name {
+      margin-top: utils.pxToRem(10px);
+      font-weight: bold;
+      font-size: utils.pxToRem(20px);
+      display: flex;
+      align-items: center;
+      gap: utils.pxToRem(5px);
+
+      &__check {
+        width: utils.pxToRem(24px);
+        height: utils.pxToRem(24px);
+        color: #01AB31;
+      }
+    }
+
+    .text {
+      font-size: utils.pxToRem(14px);
+      color: #666;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+  }
