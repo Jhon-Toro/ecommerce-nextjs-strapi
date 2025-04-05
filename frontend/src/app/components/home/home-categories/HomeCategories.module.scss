@@ -2,17 +2,28 @@
 
 .categories {
     @include utils.container();
-    background-color: #F0F0F0;
-    border-radius: utils.pxToRem(40px);
-    height: utils.pxToRem(866px);
+    background-color: rgb(240,240,240);
+    border-radius: utils.pxToRem(20px);
+    height: auto;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
+    justify-content: center;
     align-items: center;
+    margin: utils.pxToRem(70px) auto;
 
     &__title {
         font-size: utils.pxToRem(48px);
         font-weight: bold;
         text-align: center;
+        padding: utils.pxToRem(50px) 0;
+
+        @include utils.media-xs(){
+            font-size: utils.pxToRem(38px);
+        }
+        @include utils.media-sm(){
+            font-size: utils.pxToRem(38px);
+        }
+
+
     }
 }

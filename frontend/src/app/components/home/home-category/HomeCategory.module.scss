@@ -1,0 +1,50 @@
+@use 'src/styles/utils' as utils;
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: utils.pxToRem(20px);
+    row-gap: utils.pxToRem(10px);
+    align-items: center;
+    justify-content: center;
+    padding: 0 utils.pxToRem(50px) utils.pxToRem(60px) utils.pxToRem(50px);
+
+    @include utils.media-ltlg(){
+        display: flex;
+        flex-direction: column;
+        padding: 0 utils.pxToRem(30px) utils.pxToRem(20px) utils.pxToRem(30px);
+    }
+    &__card {
+        position: relative;
+        border-radius: utils.pxToRem(20px);
+        cursor: pointer;
+        width: 100%;
+        
+        &_link {
+            color: black;
+        }
+        
+        &_title {
+            position: absolute;
+            font-size: utils.pxToRem(38px);
+            left: utils.pxToRem(30px);
+            top: utils.pxToRem(15px);
+            font-weight: 500;
+        }
+
+        &_image {
+            border-radius: utils.pxToRem(20px);
+            width: 100%;
+            max-height: utils.pxToRem(280px);
+            object-fit: cover;
+        }
+
+    }
+    &__card_twoColumn {
+        grid-column: span 2;
+        @include utils.media-ltlg(){
+            grid-column: span 1;
+        }
+    }
+
+}
