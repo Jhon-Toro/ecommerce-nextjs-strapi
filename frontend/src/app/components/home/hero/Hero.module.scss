@@ -52,13 +52,13 @@
     }
 
     &__article {
-        @include utils.container();
         z-index: 10;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         padding: utils.pxToRem(120px) 0;
+        @include utils.container();
 
         @include utils.media-ltmd(){
             align-items: center;

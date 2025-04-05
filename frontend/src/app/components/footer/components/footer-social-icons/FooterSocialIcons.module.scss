@@ -1,0 +1,27 @@
+@use "src/styles/utils" as utils;
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: utils.pxToRem(10px);
+  position: absolute;
+  bottom: 0;
+
+  @include utils.media-ltlg() {
+    justify-content: center;
+  }
+
+  @include utils.media-xs(){
+    position: static;
+  }
+  &__link {
+    display: inline-block;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      outline: none;
+    }
+  }
+}

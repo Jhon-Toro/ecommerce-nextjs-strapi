@@ -1,7 +1,6 @@
 @use 'src/styles/utils' as utils;
 
 .categories {
-    @include utils.container();
     background-color: rgb(240,240,240);
     border-radius: utils.pxToRem(20px);
     height: auto;
@@ -10,6 +9,7 @@
     justify-content: center;
     align-items: center;
     margin: utils.pxToRem(70px) auto;
+    @include utils.container();
 
     &__title {
         font-size: utils.pxToRem(48px);

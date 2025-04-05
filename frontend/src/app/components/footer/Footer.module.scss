@@ -1,0 +1,88 @@
+@use "src/styles/utils" as utils;
+
+.footer {
+  background-color: #f0f0f0;
+  padding: utils.pxToRem(40px) utils.pxToRem(20px);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: utils.pxToRem(34px);
+    @include utils.container();
+
+    @include utils.media-lg(){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+    @include utils.media-ltlg(){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+
+    @include utils.media-xs(){
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__column {
+    flex: 1;
+    position: relative;
+    min-width: utils.pxToRem(350px);
+
+    @include utils.media-lg(){
+      min-width: 0;
+      max-width: utils.pxToRem(200px);
+    }
+    @include utils.media-ltlg(){
+      min-width: 0;
+      max-width: utils.pxToRem(200px);
+    }
+  }
+
+  &__title {
+    font-size: utils.pxToRem(18px);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: utils.pxToRem(20px);
+    color: black;
+  }
+
+  &__text {
+    font-size: utils.pxToRem(14px);
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: utils.pxToRem(20px);
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: utils.pxToRem(40px) auto 0;
+    padding-top: utils.pxToRem(10px);
+    border-top: utils.pxToRem(1px )solid #e0e0e0;
+    flex-wrap: wrap;
+    gap: utils.pxToRem(20px);
+    @include utils.container();
+
+    @include utils.media-sm(){
+      align-items: center;
+      justify-content: center;
+    }
+    @include utils.media-xs(){
+      align-items: center;
+      justify-content: center;
+    }
+    &_copyright {
+      font-size: utils.pxToRem(14px);
+      opacity: 60%;
+    }
+  }
+}
