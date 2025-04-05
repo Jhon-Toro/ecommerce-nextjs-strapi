@@ -1,0 +1,20 @@
+@use "src/styles/utils" as utils;
+
+.payment {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        transition: all 0.3s ease;
+        object-fit: cover;
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+        }
+
+    }
+
+    @include utils.media-ltlg(){
+        justify-content: center;
+    }
+}

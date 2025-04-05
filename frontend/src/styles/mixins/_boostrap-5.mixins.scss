@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $breakpoints: (
     xs: 376px,
     sm: 576px,
@@ -43,55 +45,55 @@ $columns: (
     margin-right: auto;
     margin-left: auto;
 
-    @media (min-width: map-get($breakpoints, xs)) and (max-width: (map-get($breakpoints, sm) - 1px)) {
-        max-width: map-get($container-max-widths, xs);
+    @media (min-width: map.get($breakpoints, xs)) and (max-width: (map.get($breakpoints, sm) - 1px)) {
+        max-width: map.get($container-max-widths, xs);
     }
 
-    @media (min-width: map-get($breakpoints, sm)) and (max-width: (map-get($breakpoints, md) - 1px)) {
-        max-width: map-get($container-max-widths, sm);
+    @media (min-width: map.get($breakpoints, sm)) and (max-width: (map.get($breakpoints, md) - 1px)) {
+        max-width: map.get($container-max-widths, sm);
     }
 
-    @media (min-width: map-get($breakpoints, md)) and (max-width: (map-get($breakpoints, lg) - 1px)) {
-        max-width: map-get($container-max-widths, md);
+    @media (min-width: map.get($breakpoints, md)) and (max-width: (map.get($breakpoints, lg) - 1px)) {
+        max-width: map.get($container-max-widths, md);
     }
 
-    @media (min-width: map-get($breakpoints, lg)) and (max-width: (map-get($breakpoints, xl) - 1px)) {
-        max-width: map-get($container-max-widths, lg);
+    @media (min-width: map.get($breakpoints, lg)) and (max-width: (map.get($breakpoints, xl) - 1px)) {
+        max-width: map.get($container-max-widths, lg);
     }
 
-    @media (min-width: map-get($breakpoints, xl)) {
-        max-width: map-get($container-max-widths, xl);
+    @media (min-width: map.get($breakpoints, xl)) {
+        max-width: map.get($container-max-widths, xl);
     }
 }
 
 @mixin row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: calc(-0.5 * map-get($gutters, xs));
-    margin-left: calc(-0.5 * map-get($gutters, xs));
+    margin-right: calc(-0.5 * map.get($gutters, xs));
+    margin-left: calc(-0.5 * map.get($gutters, xs));
 
-    @if map-get($gutters, xs) != 0 {
-        margin-top: calc(-1 * map-get($gutters, xs));
+    @if map.get($gutters, xs) != 0 {
+        margin-top: calc(-1 * map.get($gutters, xs));
     }
 
-    @media (min-width: map-get($breakpoints, sm)) {
-        margin-right: calc(-0.5 * map-get($gutters, sm));
-        margin-left: calc(-0.5 * map-get($gutters, sm));
+    @media (min-width: map.get($breakpoints, sm)) {
+        margin-right: calc(-0.5 * map.get($gutters, sm));
+        margin-left: calc(-0.5 * map.get($gutters, sm));
     }
 
-    @media (min-width: map-get($breakpoints, md)) {
-        margin-right: calc(-0.5 * map-get($gutters, md));
-        margin-left: calc(-0.5 * map-get($gutters, md));
+    @media (min-width: map.get($breakpoints, md)) {
+        margin-right: calc(-0.5 * map.get($gutters, md));
+        margin-left: calc(-0.5 * map.get($gutters, md));
     }
 
-    @media (min-width: map-get($breakpoints, lg)) {
-        margin-right: calc(-0.5 * map-get($gutters, lg));
-        margin-left: calc(-0.5 * map-get($gutters, lg));
+    @media (min-width: map.get($breakpoints, lg)) {
+        margin-right: calc(-0.5 * map.get($gutters, lg));
+        margin-left: calc(-0.5 * map.get($gutters, lg));
     }
 
-    @media (min-width: map-get($breakpoints, xl)) {
-        margin-right: calc(-0.5 * map-get($gutters, xl));
-        margin-left: calc(-0.5 * map-get($gutters, xl));
+    @media (min-width: map.get($breakpoints, xl)) {
+        margin-right: calc(-0.5 * map.get($gutters, xl));
+        margin-left: calc(-0.5 * map.get($gutters, xl));
     }
 }
 
@@ -110,31 +112,31 @@ $columns: (
 }
 
 @mixin col-xs($cols: null) {
-    @media (min-width: map-get($breakpoints, xs)) and (max-width: (map-get($breakpoints, sm) - 1px)) {
+    @media (min-width: map.get($breakpoints, xs)) and (max-width: (map.get($breakpoints, sm) - 1px)) {
         @include col($cols);
     }
 }
 
 @mixin col-sm($cols: null) {
-    @media (min-width: map-get($breakpoints, sm)) and (max-width: (map-get($breakpoints, md) - 1px)) {
+    @media (min-width: map.get($breakpoints, sm)) and (max-width: (map.get($breakpoints, md) - 1px)) {
         @include col($cols);
     }
 }
 
 @mixin col-md($cols: null) {
-    @media (min-width: map-get($breakpoints, md)) and (max-width: (map-get($breakpoints, lg) - 1px)) {
+    @media (min-width: map.get($breakpoints, md)) and (max-width: (map.get($breakpoints, lg) - 1px)) {
         @include col($cols);
     }
 }
 
 @mixin col-lg($cols: null) {
-    @media (min-width: map-get($breakpoints, lg)) and (max-width: (map-get($breakpoints, xl) - 1px)) {
+    @media (min-width: map.get($breakpoints, lg)) and (max-width: (map.get($breakpoints, xl) - 1px)) {
         @include col($cols);
     }
 }
 
 @mixin col-xl($cols: null) {
-    @media (min-width: map-get($breakpoints, xl)) {
+    @media (min-width: map.get($breakpoints, xl)) {
         @include col($cols);
     }
 }
@@ -154,31 +156,31 @@ $columns: (
 }
 
 @mixin row-cols-xs($cols: null) {
-    @media (min-width: map-get($breakpoints, xs)) and (max-width: (map-get($breakpoints, sm) - 1px)) {
+    @media (min-width: map.get($breakpoints, xs)) and (max-width: (map.get($breakpoints, sm) - 1px)) {
         @include row-cols($cols);
     }
 }
 
 @mixin row-cols-sm($cols: null) {
-    @media (min-width: map-get($breakpoints, sm)) and (max-width: (map-get($breakpoints, md) - 1px)) {
+    @media (min-width: map.get($breakpoints, sm)) and (max-width: (map.get($breakpoints, md) - 1px)) {
         @include row-cols($cols);
     }
 }
 
 @mixin row-cols-md($cols: null) {
-    @media (min-width: map-get($breakpoints, md)) and (max-width: (map-get($breakpoints, lg) - 1px)) {
+    @media (min-width: map.get($breakpoints, md)) and (max-width: (map.get($breakpoints, lg) - 1px)) {
         @include row-cols($cols);
     }
 }
 
 @mixin row-cols-lg($cols: null) {
-    @media (min-width: map-get($breakpoints, lg)) and (max-width: (map-get($breakpoints, xl) - 1px)) {
+    @media (min-width: map.get($breakpoints, lg)) and (max-width: (map.get($breakpoints, xl) - 1px)) {
         @include row-cols($cols);
     }
 }
 
 @mixin row-cols-xl($cols: null) {
-    @media (min-width: map-get($breakpoints, xl)) {
+    @media (min-width: map.get($breakpoints, xl)) {
         @include row-cols($cols);
     }
 }

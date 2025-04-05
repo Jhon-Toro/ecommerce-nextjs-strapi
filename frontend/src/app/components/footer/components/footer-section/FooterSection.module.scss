@@ -1,0 +1,41 @@
+@use "src/styles/utils" as utils;
+
+.footerSection {
+  flex: 1;
+  min-width: utils.pxToRem(200px);
+
+  @include utils.media-ltlg(){
+    margin-bottom: utils.pxToRem(30px);
+  }
+
+  &__title {
+    font-size: utils.pxToRem(18px);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: utils.pxToRem(20px);
+    color: black;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &_li {
+      margin-bottom: utils.pxToRem(10px);
+    }
+  }
+
+  &__link {
+    font-size: utils.pxToRem(14px);
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: black;
+      outline: none;
+    }
+  }
+}
