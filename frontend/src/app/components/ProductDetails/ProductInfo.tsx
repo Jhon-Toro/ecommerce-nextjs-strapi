@@ -12,7 +12,7 @@ interface ProductInfoProps {
 
 const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
+  // const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const [quantity, setQuantity] = useState(1);
 
   return (
