@@ -1,0 +1,35 @@
+
+{
+  "id": "1",
+  "name": "One Life Graphic T-Shirt",
+  "rating": 4.5,
+  "reviewsCount": 451,
+  "originalPrice": 260,
+  "discountedPrice": 260,
+  "discount": "40%",
+  "description": "Crafted from soft and breathable fabrics, it offers superior comfort and style.",
+  "mainImage": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743886274/image_1_nxcztm.svg",
+  "additionalImages": [
+    "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743887533/image_5_jefc3t.svg",
+    "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743887579/image_6_jnxlsx.svg"
+  ],
+  "colors": [
+    { "name": "Olive", "hex": "#6B7280" },
+    { "name": "Navy", "hex": "#1E3A8A" }
+  ],
+  "sizes": ["Small", "Medium", "Large", "X-Large"],
+  "reviews": [
+    {
+      "author": "Samantha D.",
+      "rating": 5,
+      "comment": "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. I appreciate the attention to detail. It’s become my favorite go-to shirt!",
+      "date": "August 14, 2023"
+    },
+    {
+      "author": "Alex M.",
+      "rating": 4,
+      "comment": "The t-shirt exceeded my expectations. The colors are vibrant and the print quality is great, but I wish the fabric was a bit thicker. Still a great buy for me!",
+      "date": "August 12, 2023"
+    }
+  ]
+}

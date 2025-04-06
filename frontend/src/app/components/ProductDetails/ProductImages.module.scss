@@ -1,0 +1,53 @@
+  // src/components/ProductDetails/ProductImages.module.scss
+  .productImages {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .mainImageWrapper {
+      position: relative;
+    }
+    
+    .zoomLens {
+      position: absolute;
+      border: 1px solid #ccc;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .zoomedImage {
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+    
+    .zoomedImageContent {
+      display: block;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      .thumbnail {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+
+        .thumbnailImage {
+          width: 152px;
+          height: 167px;
+          object-fit: cover;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+
+        &.selected {
+          .thumbnailImage {
+            border: 2px solid #000;
+          }
+        }
+      }
+    }
+  }

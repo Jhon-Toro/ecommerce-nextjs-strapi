@@ -1,0 +1,39 @@
+// src/components/ProductDetails/Reviews.module.scss
+.reviews {
+    padding: 20px;
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+  
+      button {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        background: #fff;
+        cursor: pointer;
+  
+        &:last-child {
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+  
+    .loadMore {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background: #fff;
+      cursor: pointer;
+    }
+  }

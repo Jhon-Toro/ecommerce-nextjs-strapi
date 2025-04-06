@@ -35,6 +35,18 @@
     }
   }
 
+  &--tertiary {
+    background-color: #F0F0F0;
+    color: black;
+    border: none;
+    font-weight: medium;
+    font-size: utils.pxToRem(16px);
+    margin: 0 auto;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
   &--outline {
     background-color: transparent;
     color: black;
@@ -60,6 +72,12 @@
   &--extra-small {
     width: utils.pxToRem(80px);
     height: utils.pxToRem(30px);
+  }
+
+  &--extra-small-product {
+    min-width: utils.pxToRem(86px);
+    height: utils.pxToRem(46px);
+    text-wrap-mode: nowrap;
   }
 
   &--small {
