@@ -19,37 +19,37 @@ export interface PaymentMethod {
     {
       title: "COMPANY",
       links: [
-        { label: "About", href: "/about" },
-        { label: "Features", href: "/features" },
-        { label: "Works", href: "/works" },
-        { label: "Career", href: "/career" },
+        { label: "About", href: "/" },
+        { label: "Features", href: "/" },
+        { label: "Works", href: "/" },
+        { label: "Career", href: "/" },
       ],
     },
     {
       title: "HELP",
       links: [
-        { label: "Customer Support", href: "/support" },
-        { label: "Delivery Details", href: "/delivery" },
-        { label: "Terms & Conditions", href: "/terms" },
-        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Customer Support", href: "/" },
+        { label: "Delivery Details", href: "/" },
+        { label: "Terms & Conditions", href: "/" },
+        { label: "Privacy Policy", href: "/" },
       ],
     },
     {
       title: "FAQ",
       links: [
-        { label: "Account", href: "/account" },
-        { label: "Manage Deliveries", href: "/manage-deliveries" },
-        { label: "Orders", href: "/orders" },
-        { label: "Payments", href: "/payments" },
+        { label: "Account", href: "/" },
+        { label: "Manage Deliveries", href: "/" },
+        { label: "Orders", href: "/" },
+        { label: "Payments", href: "/" },
       ],
     },
     {
       title: "RESOURCES",
       links: [
-        { label: "Free eBooks", href: "/ebooks" },
-        { label: "Development Tutorial", href: "/tutorials" },
-        { label: "How to - Blog", href: "/blog" },
-        { label: "YouTube Playlist", href: "/youtube" },
+        { label: "Free eBooks", href: "" },
+        { label: "Development Tutorial", href: "/" },
+        { label: "How to - Blog", href: "/" },
+        { label: "YouTube Playlist", href: "/" },
       ],
     },
   ];
