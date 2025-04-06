@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   description: "Ecommerce Strapi",
 };
 
-console.warn('Release 04/6/2025 3:00 PM')
-
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">

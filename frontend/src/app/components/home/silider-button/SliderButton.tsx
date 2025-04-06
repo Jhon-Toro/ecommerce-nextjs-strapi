@@ -5,7 +5,7 @@ import styles from './SliderButton.module.scss';
 const SliderButton: React.FC<SliderButtonProps> = ({ direction, onClick, disabled }) => {
   return (
     <button
-      className={`${styles.arrow} ${direction === 'left' ? styles.arrowLeft : styles.arrowRight}`}
+      className={`${styles.arrow}`}
       onClick={onClick}
       disabled={disabled}
     >

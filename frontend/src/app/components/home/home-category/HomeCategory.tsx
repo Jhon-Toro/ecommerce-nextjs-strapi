@@ -16,7 +16,7 @@ const HomeCategory = () => {
             <Image
               className={style.category__card_image}
               src={category.image}
-              alt={category.title}
+              alt={`Clothes ${category.title}`}
               width={407}
               height={289}
             />
