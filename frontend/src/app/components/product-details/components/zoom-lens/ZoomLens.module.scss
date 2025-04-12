@@ -1,0 +1,12 @@
+@use "src/styles/utils" as utils;
+
+.zoomLens {
+    position: absolute;
+    border: utils.pxToRem(1px) solid #ccc;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    width: utils.pxToRem(120px);
+    height: utils.pxToRem(120px);
+    transform: translate(-50%, -50%);
+}

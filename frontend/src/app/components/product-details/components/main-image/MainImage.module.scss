@@ -1,0 +1,10 @@
+@use "src/styles/utils" as utils;
+
+.main {
+  position: relative;
+
+  &__image {
+    border-radius: utils.pxToRem(50px);
+    object-fit: cover;
+  }
+}

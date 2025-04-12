@@ -1,0 +1,9 @@
+@use 'src/styles/utils' as utils;
+
+.product__images {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: utils.pxToRem(30px);
+}

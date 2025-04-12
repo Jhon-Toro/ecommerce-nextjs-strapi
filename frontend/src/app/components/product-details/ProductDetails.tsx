@@ -3,7 +3,7 @@ import mockProduct from '../../../assets/mockProduct.json';
 import ProductInfo from './components/product-info/ProductInfo';
 import Reviews from './components/reviews/Reviews';
 import styles from './ProductDetails.module.scss';
-import ProductImages from './ProductImages';
+import ProductImages from './components/product-images/ProductImages';
 
 const ProductDetailts = () => {
   const product: Product = mockProduct;

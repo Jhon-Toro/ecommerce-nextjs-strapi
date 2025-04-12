@@ -1,0 +1,17 @@
+@use "src/styles/utils" as utils;
+
+.zoomed {
+  border-radius: utils.pxToRem(20px);
+  background: #fff;
+  width: utils.pxToRem(444px);
+  height: utils.pxToRem(530px);
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: utils.pxToRem(454px);
+
+  &__image {
+    display: block;
+  }
+}
