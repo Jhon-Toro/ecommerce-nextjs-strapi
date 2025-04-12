@@ -3,6 +3,16 @@
 .product {
   padding: utils.pxToRem(20px);
 
+  @include utils.media-ltlg(){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   &__title {
     font-size: utils.pxToRem(40px);
     font-weight: bold;
@@ -17,5 +27,9 @@
     display: flex;
     gap: utils.pxToRem(20px);
     align-items: center;
+
+    @include utils.media-xs(){
+      gap: utils.pxToRem(10px);
+    }
   }
 }

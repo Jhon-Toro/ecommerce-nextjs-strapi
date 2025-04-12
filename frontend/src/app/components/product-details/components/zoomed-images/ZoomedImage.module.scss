@@ -14,4 +14,15 @@
   &__image {
     display: block;
   }
+
+  @include utils.media-ltlg(){
+    top: utils.pxToRem(550px);
+    left: 0;
+  }
+  @include utils.media-xs(){
+    width: utils.pxToRem(340px);
+    height: utils.pxToRem(300px);
+    top: utils.pxToRem(320px);
+    left: 0;
+  }
 }

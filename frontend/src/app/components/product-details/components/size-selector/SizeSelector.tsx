@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SizeSelector.module.scss';
-import Button from '../button/Button';
+import Button from '../../../../shared-components/button/Button';
 
 interface SizeSelectorProps {
   sizes: string[];

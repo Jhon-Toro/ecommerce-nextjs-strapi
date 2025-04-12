@@ -6,5 +6,10 @@
   &__image {
     border-radius: utils.pxToRem(50px);
     object-fit: cover;
+
+    @include utils.media-xs(){
+      width: utils.pxToRem(340px);
+      height: utils.pxToRem(300px);
+    }
   }
 }

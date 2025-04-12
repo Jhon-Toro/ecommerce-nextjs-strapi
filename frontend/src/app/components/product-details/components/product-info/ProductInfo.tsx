@@ -8,7 +8,7 @@ import Button from '@/app/shared-components/button/Button';
 import QuantityControl from '../quantity-control/QuantityControl';
 import ProductPrice from '@/app/shared-components/product-price/ProductPrice';
 import ColorSelector from '@/app/shared-components/select-color/SelectColor';
-import SizeSelector from '@/app/shared-components/size-selector/SizeSelector';
+import SizeSelector from '@/app/components/product-details/components/size-selector/SizeSelector';
 
 interface ProductInfoProps {
   product: Product;

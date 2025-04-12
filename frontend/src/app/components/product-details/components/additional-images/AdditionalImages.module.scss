@@ -7,4 +7,12 @@
     justify-content: center;
     align-items: center;
     width: min-content;
+
+    @include utils.media-ltlg(){
+        flex-wrap: nowrap;
+    }
+
+    @include utils.media-xs(){
+        gap: utils.pxToRem(5px);
+    }
 }

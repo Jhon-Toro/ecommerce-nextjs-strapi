@@ -107,5 +107,9 @@
       width: utils.pxToRem(236px);
       height: utils.pxToRem(44px);
     }
+
+    @include utils.media-xs(){
+      width: utils.pxToRem(160px);
+    }
   }
 }

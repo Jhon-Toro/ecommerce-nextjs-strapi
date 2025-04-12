@@ -24,8 +24,8 @@ const ProductImages: React.FC<ProductImagesProps> = ({ mainImage, additionalImag
       <MainImage
         currentMainImage={currentMainImage}
         isMobile={isMobile}
-        width={444}
-        height={530}
+        width={isMobile ? 340 : 444}
+        height={isMobile ? 300 : 530}
       />
       <AdditionalImages
         currentMainImage={currentMainImage}

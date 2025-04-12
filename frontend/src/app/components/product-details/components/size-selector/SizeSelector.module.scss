@@ -12,6 +12,11 @@
   &__options {
     display: flex;
     gap: utils.pxToRem(10px);
+
+    @include utils.media-xs(){
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
   }
 
   &__button {

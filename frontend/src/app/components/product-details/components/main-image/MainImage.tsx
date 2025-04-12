@@ -1,48 +1,100 @@
-import { useState, useRef } from 'react';
+'use client';
+
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { IMAGE_CONFIG } from '../../constants/ImageConfig';
 import { MainImageProps } from '../../interfaces/main-image/MainImage.interface';
+import { calculateLensPosition, calculateZoomedImageTranslate } from '../../helpers/imageZoomUtils';
 import Image from 'next/image';
 import ZoomLens from '../zoom-lens/ZoomLens';
 import ZoomedImage from '../zoomed-images/ZoomedImage';
 import styles from './MainImage.module.scss';
 
-const MainImage: React.FC<MainImageProps> = ({ currentMainImage, isMobile, width, height }) => {
+const MainImage: React.FC<MainImageProps> = ({ currentMainImage, isMobile }) => {
   const [isZooming, setIsZooming] = useState(false);
   const [lensPosition, setLensPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
+  const imageWidth = isMobile ? IMAGE_CONFIG.ZOOMED_IMAGE_WIDTH_MOBILE : IMAGE_CONFIG.ZOOMED_IMAGE_WIDTH;
+  const imageHeight = isMobile ? IMAGE_CONFIG.ZOOMED_IMAGE_HEIGHT_MOBILE : IMAGE_CONFIG.ZOOMED_IMAGE_HEIGHT;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const updateLensPosition = useCallback((x: number, y: number) => {
+    setLensPosition({ x, y });
+  }, []);
+
+  const handleMouseMove = (MouseEvent: React.MouseEvent<HTMLDivElement>) => {
     if (!imageRef.current || isMobile) return;
 
-    const { left, top, width: rectWidth, height: rectHeight } = imageRef.current.getBoundingClientRect();
-    const x = e.clientX - left;
-    const y = e.clientY - top;
-
-    const lensX = Math.max(IMAGE_CONFIG.LENS_SIZE / 2, Math.min(rectWidth - IMAGE_CONFIG.LENS_SIZE / 2, x));
-    const lensY = Math.max(IMAGE_CONFIG.LENS_SIZE / 2, Math.min(rectHeight - IMAGE_CONFIG.LENS_SIZE / 2, y));
-
-    setLensPosition({ x: lensX, y: lensY });
+    const rect = imageRef.current.getBoundingClientRect();
+    const newPosition = calculateLensPosition(MouseEvent.clientX, MouseEvent.clientY, rect);
+    setLensPosition(newPosition);
     setIsZooming(true);
+  };
+
+  const handleTouchStart = (TouchEvent: React.TouchEvent<HTMLDivElement>) => {
+    if (!imageRef.current) return;
+
+    const touch = TouchEvent.touches[0];
+    const rect = imageRef.current.getBoundingClientRect();
+    const newPosition = calculateLensPosition(touch.clientX, touch.clientY, rect);
+    setLensPosition(newPosition);
+    setIsZooming(true);
+  };
+
+  const handleTouchMove = useCallback(
+    (TouchEvent: TouchEvent) => {
+      if (!imageRef.current) return;
+
+      TouchEvent.preventDefault();
+
+      const touch = TouchEvent.touches[0];
+      const rect = imageRef.current.getBoundingClientRect();
+      const newPosition = calculateLensPosition(touch.clientX, touch.clientY, rect);
+
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        updateLensPosition(newPosition.x, newPosition.y);
+        setIsZooming(true);
+      });
+    },
+    [updateLensPosition]
+  );
+
+  const handleTouchEnd = () => {
+    setIsZooming(false);
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
   };
 
   const handleMouseLeave = () => {
     setIsZooming(false);
   };
 
-  const zoomedImageTranslateX = Math.min(
-    Math.max(0, (lensPosition.x - IMAGE_CONFIG.LENS_SIZE / 2) * IMAGE_CONFIG.ZOOM_FACTOR),
-    (width * IMAGE_CONFIG.ZOOM_FACTOR - width)
-  );
-  const zoomedImageTranslateY = Math.min(
-    Math.max(0, (lensPosition.y - IMAGE_CONFIG.LENS_SIZE / 2) * IMAGE_CONFIG.ZOOM_FACTOR),
-    (height * IMAGE_CONFIG.ZOOM_FACTOR - height)
-  );
+  useEffect(() => {
+    const element = imageRef.current;
+    if (!element) return;
+
+    element.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      element.removeEventListener('touchmove', handleTouchMove);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+  }, [handleTouchMove]);
+
+  const zoomedTranslate = calculateZoomedImageTranslate(lensPosition, imageWidth, imageHeight);
 
   return (
     <article
       className={styles.main}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       ref={imageRef}
       role="region"
       aria-label="Main product image with zoom"
@@ -50,22 +102,20 @@ const MainImage: React.FC<MainImageProps> = ({ currentMainImage, isMobile, width
       <Image
         src={currentMainImage}
         alt="Main product image"
-        width={width}
-        height={height}
+        width={imageWidth}
+        height={imageHeight}
         className={styles.main__image}
         priority
       />
-      {isZooming && !isMobile && (
-        <ZoomLens lensPosition={lensPosition} />
-      )}
-      {isZooming && !isMobile && (
+      {isZooming && <ZoomLens lensPosition={lensPosition} />}
+      {isZooming && (
         <ZoomedImage
           currentMainImage={currentMainImage}
-          width={width}
-          height={height}
+          width={imageWidth}
+          height={imageHeight}
           zoomFactor={IMAGE_CONFIG.ZOOM_FACTOR}
-          translateX={zoomedImageTranslateX}
-          translateY={zoomedImageTranslateY}
+          translateX={zoomedTranslate.x}
+          translateY={zoomedTranslate.y}
         />
       )}
     </article>

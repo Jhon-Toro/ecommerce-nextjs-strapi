@@ -9,12 +9,22 @@
     height: utils.pxToRem(167px);
     border-radius: utils.pxToRem(20px);
 
+    @include utils.media-xs(){
+        width: utils.pxToRem(111px);
+        height: utils.pxToRem(106px);
+    }
+
     &__image {
         width: utils.pxToRem(152px);
         height: utils.pxToRem(167px);
         border-radius: utils.pxToRem(20px);
         object-fit: cover;
-        border: utils.pxToRem(1px) solid #ccc;
+        border: none;
+
+        @include utils.media-xs(){
+            width: utils.pxToRem(111px);
+            height: utils.pxToRem(106px);
+        }
     }
 
     &.selected {

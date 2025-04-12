@@ -6,4 +6,9 @@
   justify-content: center;
   align-items: center;
   gap: utils.pxToRem(30px);
+
+  @include utils.media-ltlg(){
+    flex-direction: column;
+  }
+
 }
