@@ -1,0 +1,16 @@
+@use "src/styles/utils" as utils;
+
+.container {
+  @include utils.container();
+
+  &__main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include utils.media-ltlg() {
+      flex-direction: column;
+    }
+  }
+}

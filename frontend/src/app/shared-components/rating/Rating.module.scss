@@ -22,6 +22,16 @@
       clip-path: inset(0 50% 0 0);
     }
   }
+  
+  &__number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_last {
+      opacity: 70%;
+    }
+  }
 
   &.small .star {
     width: utils.pxToRem(16px);

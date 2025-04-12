@@ -4,4 +4,5 @@ export interface ButtonProps {
     onClick?: () => void;
     className?: string;
     size: 'extra-small'| 'extra-small-product' | 'small' | 'medium' | 'large' | 'extra-large';
+    margin?: 'zero';
 }

@@ -1,0 +1,25 @@
+@use "src/styles/utils" as utils;
+
+.thumbnail {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: utils.pxToRem(152px);
+    height: utils.pxToRem(167px);
+    border-radius: utils.pxToRem(20px);
+
+    &__image {
+        width: utils.pxToRem(152px);
+        height: utils.pxToRem(167px);
+        border-radius: utils.pxToRem(20px);
+        object-fit: cover;
+        border: utils.pxToRem(1px) solid #ccc;
+    }
+
+    &.selected {
+        .thumbnail__image {
+            border: utils.pxToRem(2px) solid #000;
+        }
+    }
+}

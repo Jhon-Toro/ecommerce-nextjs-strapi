@@ -28,6 +28,7 @@ const Rating: React.FC<RatingProps> = ({ rating, size }) => {
       {Array.from({ length: emptyStars }, (_, i) => (
         <StarIcon key={`empty-${i}`} className={`${styles.star} ${styles.empty} ${styles[size]}`} />
       ))}
+      <p className={styles.rating__number}>{rating}/<span className={styles.rating__number_last}>5</span></p>
     </section>
   );
 };

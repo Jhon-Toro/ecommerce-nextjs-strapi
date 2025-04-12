@@ -1,0 +1,36 @@
+@use "src/styles/utils" as utils;
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: utils.pxToRem(62px);
+  width: utils.pxToRem(170px);
+  height: utils.pxToRem(52px);
+  padding: 0 utils.pxToRem(5px);
+  text-decoration: none;
+
+  &__button {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: utils.pxToRem(32px);
+    padding: 0 utils.pxToRem(10px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  &__value {
+    font-size: utils.pxToRem(16px);
+    font-weight: 500;
+    color: #000;
+    min-width: utils.pxToRem(20px);
+    text-align: center;
+    text-decoration: none;
+  }
+}

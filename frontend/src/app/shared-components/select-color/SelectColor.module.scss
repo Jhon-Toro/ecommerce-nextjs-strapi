@@ -1,0 +1,32 @@
+@use "src/styles/utils" as utils;
+
+.colors {
+  margin-bottom: utils.pxToRem(20px);
+
+  p {
+    margin-bottom: utils.pxToRem(10px);
+    font-size: utils.pxToRem(16px);
+    opacity: 60%;
+  }
+
+  &__options {
+    display: flex;
+    gap: utils.pxToRem(10px);
+
+    &_button {
+      width: utils.pxToRem(30px);
+      height: utils.pxToRem(30px);
+      border-radius: 50%;
+      border: utils.pxToRem(2px) solid transparent;
+      cursor: pointer;
+
+      &.selected {
+        border: none;
+        background-image: url("https://res.cloudinary.com/dxspvj1rj/image/upload/v1744259602/Vector_h3xock.svg");
+        background-size: utils.pxToRem(16px);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

@@ -1,8 +1,6 @@
-// src/components/ProductDetails/Reviews.tsx
-import React from 'react';
 import styles from './Reviews.module.scss';
-import ReviewCard from './ReviewCard';
-import { Review } from './productdetails.interface';
+import { Review } from '../../interfaces/product-details/ProductDetails.interface';
+import ReviewCard from '../review-card/ReviewCard';
 
 interface ReviewsProps {
   reviews: Review[];

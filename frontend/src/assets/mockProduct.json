@@ -4,9 +4,9 @@
   "name": "One Life Graphic T-Shirt",
   "rating": 4.5,
   "reviewsCount": 451,
-  "originalPrice": 260,
-  "discountedPrice": 260,
-  "discount": "40%",
+  "price": 260,
+  "discountPrice": 200,
+  "discount": 40,
   "description": "Crafted from soft and breathable fabrics, it offers superior comfort and style.",
   "mainImage": "https://res.cloudinary.com/dxspvj1rj/image/upload/v1743886274/image_1_nxcztm.svg",
   "additionalImages": [

@@ -74,6 +74,10 @@
     height: utils.pxToRem(30px);
   }
 
+  &--zero{
+    margin: 0;
+  }
+  
   &--extra-small-product {
     min-width: utils.pxToRem(86px);
     height: utils.pxToRem(46px);
@@ -96,7 +100,12 @@
   }
 
   &--extra-large {
-    width: utils.pxToRem(250px);
-    height: utils.pxToRem(70px);
+    width: utils.pxToRem(400px);
+    height: utils.pxToRem(52px);
+    
+    @include utils.media-ltlg(){
+      width: utils.pxToRem(236px);
+      height: utils.pxToRem(44px);
+    }
   }
 }

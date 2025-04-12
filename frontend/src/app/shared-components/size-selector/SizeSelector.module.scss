@@ -1,0 +1,23 @@
+@use "src/styles/utils" as utils;
+
+.sizes {
+  margin-bottom: utils.pxToRem(20px);
+
+  p {
+    margin-bottom: utils.pxToRem(10px);
+    font-size: utils.pxToRem(16px);
+    opacity: 60%;
+  }
+
+  &__options {
+    display: flex;
+    gap: utils.pxToRem(10px);
+  }
+
+  &__button {
+    &.selected {
+      background: #000;
+      color: #fff;
+    }
+  }
+}

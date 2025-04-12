@@ -1,0 +1,10 @@
+@use "src/styles/utils" as utils;
+
+.thumbnails {
+    display: flex;
+    gap: utils.pxToRem(10px);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+}
