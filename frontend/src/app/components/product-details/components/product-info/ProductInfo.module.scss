@@ -1,4 +1,4 @@
-@use "src/styles/utils" as utils;
+@use '@/styles/utils' as utils;
 
 .product {
   padding: utils.pxToRem(20px);
@@ -11,7 +11,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     padding-right: 0;
     padding-left: 0;

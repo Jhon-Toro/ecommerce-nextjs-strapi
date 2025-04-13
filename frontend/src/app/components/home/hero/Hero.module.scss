@@ -1,4 +1,4 @@
-@use 'src/styles/utils' as utils;
+@use '@/styles/utils' as utils;
 
 .hero{
     position: relative;
@@ -56,7 +56,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: start;
+        align-items: flex-start;
         padding: utils.pxToRem(120px) 0;
         @include utils.container();
 
@@ -82,7 +82,7 @@
             max-width: utils.pxToRem(600px);
             margin: utils.pxToRem(20px) 0;
             font-weight: normal;
-            opacity: 60%;
+            opacity: 0.6;
         }
 
         &_stats {

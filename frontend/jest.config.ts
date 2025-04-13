@@ -9,9 +9,16 @@ const config: Config = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': [
+      'ts-jest',
+      {
+        tsconfig: '<rootDir>/tsconfig.jest.json',
+      },
+    ],
   },
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  transformIgnorePatterns: [
+    '/node_modules/(?!(@babel|@testing-library|identity-obj-proxy|next))',
+  ],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',

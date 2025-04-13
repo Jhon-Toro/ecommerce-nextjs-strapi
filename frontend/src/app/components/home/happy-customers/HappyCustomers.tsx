@@ -39,7 +39,7 @@ const HappyCustomers = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [itemsPerSlide, setItemsPerSlide] = useState<number>(3);
 
-  const totalReviews = useMemo(() => reviews.length, [reviews]);
+  const totalReviews = useMemo(() => reviews.length, []);
 
   const nextSlide = (): void => {
     if (totalReviews <= itemsPerSlide) return;

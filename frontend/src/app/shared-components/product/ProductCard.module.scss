@@ -1,9 +1,9 @@
-@use 'src/styles/utils' as utils;
+@use '@/styles/utils' as utils;
 
 .product {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   margin-bottom: utils.pxToRem(32px);
 
 
