@@ -1,13 +1,9 @@
+import { FC } from 'react';
 import { StarIcon } from '@heroicons/react/24/solid';
-import type React from 'react';
+import { RatingProps } from './interfaces/Rating.interface';
 import styles from './Rating.module.scss';
 
-interface RatingProps {
-  rating: number;
-  size: 'small' | 'medium' | 'extra-medium';
-}
-
-const Rating: React.FC<RatingProps> = ({ rating, size }) => {
+const Rating: FC<RatingProps> = ({ rating, size, numbers = true }) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
   const emptyStars = 5 - Math.ceil(rating);
@@ -28,7 +24,7 @@ const Rating: React.FC<RatingProps> = ({ rating, size }) => {
       {Array.from({ length: emptyStars }, (_, i) => (
         <StarIcon key={`empty-${i}`} className={`${styles.star} ${styles.empty} ${styles[size]}`} />
       ))}
-      <p className={styles.rating__number}>{rating}/<span className={styles.rating__number_last}>5</span></p>
+      {numbers && <p className={styles.rating__number}>{rating}/<span className={styles.rating__number_last}>5</span></p>}
     </section>
   );
 };

@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import { ZoomLensProps } from '../../interfaces/zoom-lens/ZoomLens.interface';
 import styles from './ZoomLens.module.scss';
 
-const ZoomLens: React.FC<ZoomLensProps> = ({ lensPosition }) => {
+const ZoomLens: FC<ZoomLensProps> = ({ lensPosition }) => {
   return (
     <div
       className={styles.zoomLens}

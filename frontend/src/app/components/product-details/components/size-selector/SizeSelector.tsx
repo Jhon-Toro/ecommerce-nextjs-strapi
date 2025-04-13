@@ -1,14 +1,10 @@
-import React from 'react';
-import styles from './SizeSelector.module.scss';
+import { FC } from 'react';
+import { SizeSelectorProps } from '../../interfaces/size-selector-props/SizeSelectorProps.interface';
+import clsx from 'clsx';
 import Button from '../../../../shared-components/button/Button';
+import styles from './SizeSelector.module.scss';
 
-interface SizeSelectorProps {
-  sizes: string[];
-  selectedSize: string;
-  onSizeChange: (size: string) => void;
-}
-
-const SizeSelector: React.FC<SizeSelectorProps> = ({ sizes, selectedSize, onSizeChange }) => {
+const SizeSelector: FC<SizeSelectorProps> = ({ sizes, selectedSize, onSizeChange }) => {
   return (
     <section className={styles.sizes}>
       <p>Choose Size</p>
@@ -20,7 +16,7 @@ const SizeSelector: React.FC<SizeSelectorProps> = ({ sizes, selectedSize, onSize
             text={size}
             size="extra-small-product"
             margin="zero"
-            className={`${styles.sizes__button} ${selectedSize === size ? styles.selected : ''}`}
+            className={clsx(styles.sizes__button, {[styles.selected] : selectedSize === size})}
             onClick={() => onSizeChange(size)}
           />
         ))}

@@ -1,10 +1,11 @@
 
+import { FC } from 'react';
 import type { FeaturedProductsProps } from './interfaces/FeaturedProductsProps.interface';
-import styles from './FeaturedProducts.module.scss';
 import ProductCard from '@/app/shared-components/product/ProductCard';
 import Button from '@/app/shared-components/button/Button';
+import styles from './FeaturedProducts.module.scss';
 
-const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ products, category }) => {
+const FeaturedProducts: FC<FeaturedProductsProps> = ({ products, category }) => {
   return (
     <section className={styles.products}>
       <hr className={styles.products__hr}/>

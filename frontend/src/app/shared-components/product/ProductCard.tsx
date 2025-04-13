@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import type { Product } from './interfaces/Product.interface';
 import Image from 'next/image';
-import styles from './ProductCard.module.scss';
 import Rating from '../rating/Rating';
 import ProductPrice from '../product-price/ProductPrice';
+import styles from './ProductCard.module.scss';
 
-const ProductCard: React.FC<Product> = ({
+const ProductCard: FC<Product> = ({
   id,
   name,
   price,

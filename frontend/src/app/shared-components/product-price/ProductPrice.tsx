@@ -1,13 +1,8 @@
+import { FC } from 'react';
+import { ProductPriceProps } from './interfaces/produce-price-props/ProductPriceProps.interface';
 import styles from './ProductPrice.module.scss';
 
-interface ProductPriceProps {
-    price: number;
-    discountPrice?: number;
-    discount?: number;
-    currency?: string;
-}
-
-const ProductPrice: React.FC<ProductPriceProps> = ({ price, discountPrice, discount, currency = 'USD' }) => {
+const ProductPrice: FC<ProductPriceProps> = ({ price, discountPrice, discount, currency = 'USD' }) => {
     const formatPrice = (value: number) =>
         new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(value);
 

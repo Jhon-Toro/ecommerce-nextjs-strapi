@@ -2,6 +2,7 @@ import Image from 'next/image';
 import style from './HomeCategory.module.scss';
 import Link from 'next/link';
 import categories from '../../../../assets/home-category.json';
+import clsx from 'clsx';
 
 const HomeCategory = () => {
   return (
@@ -9,7 +10,9 @@ const HomeCategory = () => {
       {categories.map((category, index) => (
         <div
           key={index}
-          className={`${style.category__card} ${category.twoColumn ? style.category__card_twoColumn : ''}`}
+          className={clsx(style.category__card, {
+            [style.category__card_twoColumn] : category.twoColumn
+          })}
         >
           <Link href={category.link} className={style.category__card_link}>
             <h3 className={style.category__card_title}>{category.title}</h3>

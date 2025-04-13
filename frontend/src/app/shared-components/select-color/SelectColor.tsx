@@ -1,17 +1,9 @@
+import { FC } from 'react';
+import { ColorSelectorProps } from './interfaces/color-selector-props/ColorSelectorProps.interface';
+import clsx from 'clsx';
 import styles from './SelectColor.module.scss';
 
-interface Color {
-    name: string;
-    hex: string;
-  }
-
-interface ColorSelectorProps {
-    colors: Color[];
-    selectedColor: string;
-    onColorChange: (colorName: string) => void;
-}
-
-const ColorSelector: React.FC<ColorSelectorProps> = ({ colors, selectedColor, onColorChange }) => {
+const ColorSelector: FC<ColorSelectorProps> = ({ colors, selectedColor, onColorChange }) => {
   return (
     <section className={styles.colors}>
       <p>Select Colors</p>
@@ -19,7 +11,7 @@ const ColorSelector: React.FC<ColorSelectorProps> = ({ colors, selectedColor, on
         {colors.map((color) => (
           <button
             key={color.name}
-            className={`${styles.colors__options_button} ${selectedColor === color.name ? styles.selected : ''}`}
+            className={clsx(styles.colors__options_button, {[styles.selected] : selectedColor === color.name})}
             style={{ backgroundColor: color.hex }}
             onClick={() => onColorChange(color.name)}
           />

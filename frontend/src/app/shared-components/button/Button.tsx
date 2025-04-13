@@ -1,8 +1,8 @@
-import type React from 'react';
+import { FC } from 'react';
 import type { ButtonProps } from './interfaces/ButtonProps';
 import styles from './Button.module.scss';
 
-const Button: React.FC<ButtonProps> = ({ type, text, onClick, className, size, margin }) => {
+const Button: FC<ButtonProps> = ({ type, text, onClick, className, size, margin }) => {
   return (
     <button
       type='button'

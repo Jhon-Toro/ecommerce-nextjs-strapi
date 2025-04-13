@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
+import { paymentMethods } from '../../footerData';
 import Image from 'next/image';
 import styles from './FooterPaymentMethods.module.scss';
-import { paymentMethods } from '../../footerData';
 
-const PaymentMethods: React.FC = () => (
+const PaymentMethods: FC = () => (
   <div className={styles.payment} role="list" aria-label="Accepted Payment Methods">
     {paymentMethods.map((method) => (
       <div key={method.name} role="listitem">

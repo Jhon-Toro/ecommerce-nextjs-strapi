@@ -1,11 +1,12 @@
 'use client';
 
-import { IMAGE_CONFIG } from '../../constants/ImageConfig';
+import { FC } from 'react';
+import { IMAGE_CONFIG } from '../../constants/ImageConfig.constant';
 import { AdditionalImagesProps } from '../../interfaces/additional-images/AdditionalImages.interface';
 import Thumbnail from '../thumbnail/Thumbnail';
 import styles from './AdditionalImages.module.scss';
 
-const AdditionalImages: React.FC<AdditionalImagesProps> = ({
+const AdditionalImages: FC<AdditionalImagesProps> = ({
   currentMainImage,
   mainImage,
   setCurrentMainImage,

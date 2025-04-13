@@ -1,0 +1,70 @@
+@use "src/styles/utils" as utils;
+
+.faqItem {
+  background: #ffffff;
+  border-radius: utils.pxToRem(8px);
+  margin-bottom: utils.pxToRem(16px);
+  box-shadow: 0 utils.pxToRem(2px) utils.pxToRem(4px) rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: utils.pxToRem(16px);
+    font-size: utils.pxToRem(18px);
+    font-weight: 600;
+    color: #1f2937;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background-color: #f1f5f9;
+    }
+
+    &.active {
+      color: #2563eb;
+    }
+
+    @include utils.media-ltlg(){
+      font-size: utils.pxToRem(16px);
+    }
+  }
+
+  &__icon {
+    font-size: utils.pxToRem(24px);
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+
+  &__answer {
+    max-height: 0;
+    padding: 0 utils.pxToRem(16px);
+    font-size: utils.pxToRem(16px);
+    line-height: 1.6;
+    color: #4b5563;
+    overflow: hidden;
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
+
+    &.active {
+      max-height: utils.pxToRem(200px);
+      padding: utils.pxToRem(16px);
+
+      @include utils.media-ltlg(){
+        max-height: utils.pxToRem(300px);
+      }
+    }
+
+    @include utils.media-ltlg(){
+      font-size: utils.pxToRem(14px);
+    }
+  }
+}

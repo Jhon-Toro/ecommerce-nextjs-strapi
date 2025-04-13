@@ -1,11 +1,11 @@
-
+import { FC } from 'react';
 import { ThumbnailProps } from '../../interfaces/thumbnail/Thumbnail.interface';
-import { IMAGE_CONFIG } from '../../constants/ImageConfig';
+import { IMAGE_CONFIG } from '../../constants/ImageConfig.constant';
 import clsx from 'clsx';
 import Image from 'next/image';
 import styles from './Thumbnail.module.scss';
 
-const Thumbnail: React.FC<ThumbnailProps> = ({
+const Thumbnail: FC<ThumbnailProps> = ({
   image,
   isSelected,
   onSelect,

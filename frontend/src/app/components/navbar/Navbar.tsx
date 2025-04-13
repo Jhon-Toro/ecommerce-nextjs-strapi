@@ -1,14 +1,14 @@
 'use client';
 
-import Link from 'next/link';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import type { MenuData } from './interfaces/menu-data/MenuData.interface';
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import menuData from '../../../assets/menu.json';
 import Sidebar from '../sidebar/Sidebar';
 import styles from './Navbar.module.scss';
 
-const Navbar: React.FC = () => {
+const Navbar: FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const data: MenuData = menuData;
 

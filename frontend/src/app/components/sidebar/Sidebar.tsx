@@ -1,15 +1,17 @@
 'use client';
 
-import Link from 'next/link';
-import styles from './Sidebar.module.scss';
-import type { SidebarProps } from './interfaces/sidebar-props/SidebarProps.interface';
+import { FC } from 'react';
 import { XMarkIcon } from '@heroicons/react/16/solid';
+import clsx from 'clsx';
+import Link from 'next/link';
+import type { SidebarProps } from './interfaces/sidebar-props/SidebarProps.interface';
+import styles from './Sidebar.module.scss';
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, menu }) => {
+const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar, menu }) => {
   return (
-    <dialog className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+    <dialog role='dialog' open={isOpen} className={clsx(styles.sidebar, {[styles.open] : isOpen})}>
       <strong className={styles.navbar__brand}>SHOP.COM</strong>
-      <XMarkIcon className={styles.sidebar__close} onClick={toggleSidebar} />
+      <XMarkIcon className={styles.sidebar__close} onClick={toggleSidebar} data-testid="sidebar-close"/>
       <ul className={styles.sidebar__list}>
         {menu.map((item, index) => (
           <li key={index} className={styles.sidebar__item}>

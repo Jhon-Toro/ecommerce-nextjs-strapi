@@ -1,0 +1,45 @@
+@use "src/styles/utils" as utils;
+
+.faqs {
+  padding: utils.pxToRem(64px) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include utils.media-ltlg() {
+    padding: utils.pxToRem(32px) 0;
+  }
+
+  &__container {
+    max-width: utils.pxToRem(800px);
+    margin: 0 auto;
+    min-height: utils.pxToRem(400px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    @include utils.media-ltlg() {
+      min-height: utils.pxToRem(300px);
+    }
+
+    &_title {
+      font-size: utils.pxToRem(32px);
+      font-weight: 700;
+      color: black;
+      margin-bottom: utils.pxToRem(32px);
+      text-align: center;
+
+      @include utils.media-ltlg() {
+        font-size: utils.pxToRem(24px);
+      }
+    }
+  }
+
+  &__noFaqs {
+    font-size: utils.pxToRem(16px);
+    color: #6b7280;
+    text-align: center;
+    margin-top: utils.pxToRem(16px);
+  }
+}

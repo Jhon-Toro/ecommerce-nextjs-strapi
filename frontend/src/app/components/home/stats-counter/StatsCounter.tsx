@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, FC } from 'react';
 import type { StatsCounterProps } from './interfaces/StatsCounterProps';
 import styles from './StatsCounter.module.scss';
 
-const StatsCounter: React.FC<StatsCounterProps> = ({ endValue, label, duration = 2000 }) => {
+const StatsCounter: FC<StatsCounterProps> = ({ endValue, label, duration = 2000 }) => {
   const [count, setCount] = useState(0);
 
   const incrementValue = useCallback(() => {

@@ -1,11 +1,11 @@
-import React from 'react';
-import styles from './Footer.module.scss';
+import { FC } from 'react';
 import { footerSections, socialLinks } from './footerData';
 import FooterSocialIcons from './components/footer-social-icons/FooterSocialIcons';
 import FooterSectionComponent from './components/footer-section/FooterSection';
 import PaymentMethods from './components/footer-payment-methods/FooterPaymentMethods';
+import styles from './Footer.module.scss';
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (

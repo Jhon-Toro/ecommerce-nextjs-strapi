@@ -9,7 +9,7 @@ const brandImages: string[] = [
   'https://res.cloudinary.com/dxspvj1rj/image/upload/v1743280454/prada_haqr5t.svg',
 ];
 
-const BrandsBanner: React.FC = () => {
+const BrandsBanner = () => {
   return (
     <div className={styles.banner}>
       <div className={styles.banner__container}>

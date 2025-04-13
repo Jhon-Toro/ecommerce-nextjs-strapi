@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { IMAGE_CONFIG } from '../../constants/ImageConfig';
+import { useState, useRef, useEffect, useCallback, FC } from 'react';
+import { IMAGE_CONFIG } from '../../constants/ImageConfig.constant';
 import { MainImageProps } from '../../interfaces/main-image/MainImage.interface';
 import { calculateLensPosition, calculateZoomedImageTranslate } from '../../helpers/imageZoomUtils';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import ZoomLens from '../zoom-lens/ZoomLens';
 import ZoomedImage from '../zoomed-images/ZoomedImage';
 import styles from './MainImage.module.scss';
 
-const MainImage: React.FC<MainImageProps> = ({ currentMainImage, isMobile }) => {
+const MainImage: FC<MainImageProps> = ({ currentMainImage, isMobile }) => {
   const [isZooming, setIsZooming] = useState(false);
   const [lensPosition, setLensPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef<HTMLDivElement>(null);

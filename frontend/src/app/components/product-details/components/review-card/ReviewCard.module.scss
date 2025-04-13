@@ -1,31 +1,55 @@
-// src/components/ProductDetails/ReviewCard.module.scss
-.reviewCard {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  
-    .header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-  
-      .author {
-        font-weight: bold;
-      }
-  
-      .rating {
-        color: #f5a623;
-      }
+@use "src/styles/utils" as utils;
+
+.review {
+  padding: utils.pxToRem(24px);
+  background: #fff;
+  border: utils.pxToRem(1px) solid #e0e0e0;
+  border-radius: utils.pxToRem(20px);
+  box-shadow: 0 utils.pxToRem(2px) utils.pxToRem(4px) rgba(0, 0, 0, 0.05);
+
+  @include utils.media-ltlg(){
+    padding: utils.pxToRem(12px);
+  }
+
+  &__author {
+    margin-top: utils.pxToRem(10px);
+    font-size: utils.pxToRem(20px);
+    font-weight: 600;
+    margin-bottom: utils.pxToRem(8px);
+    display: flex;
+    align-items: center;
+    gap: utils.pxToRem(5px);
+
+    @include utils.media-ltlg(){
+      font-size: utils.pxToRem(13px);
     }
-  
-    .comment {
-      margin-bottom: 10px;
-      color: #666;
-    }
-  
-    .date {
-      font-size: 0.9rem;
-      color: #999;
+
+    &__check {
+      width: utils.pxToRem(24px);
+      height: utils.pxToRem(24px);
+      color: #01ab31;
     }
   }
+
+  &__text {
+    font-size: utils.pxToRem(16px);
+    line-height: 1.5;
+    color: #000000;
+    opacity: 60%;
+    margin-bottom: utils.pxToRem(8px);
+
+    @include utils.media-ltlg(){
+      font-size: utils.pxToRem(13px);
+    }
+  }
+
+  &__date {
+    font-size: utils.pxToRem(16px);
+    color: black;
+    opacity: 60%;
+
+    @include utils.media-ltlg(){
+      font-size: utils.pxToRem(11px);
+    }
+  }
+}

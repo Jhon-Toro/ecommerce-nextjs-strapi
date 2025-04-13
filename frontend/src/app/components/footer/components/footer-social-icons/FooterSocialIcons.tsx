@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
+import { FooterLink } from '../../footerData';
 import Image from 'next/image';
 import styles from './FooterSocialIcons.module.scss';
-import { FooterLink } from '../../footerData';
 
-const FooterSocialIcons: React.FC<{ links: FooterLink[] }> = ({ links }) => (
+const FooterSocialIcons: FC<{ links: FooterLink[] }> = ({ links }) => (
   <div className={styles.social} role="navigation" aria-label="Social Media Links">
     {links.map((link) => (
       <a

@@ -2,6 +2,10 @@
 
 .product {
   padding: utils.pxToRem(20px);
+  
+  @include utils.media-lg(){
+    padding: utils.pxToRem(14px);
+  }
 
   @include utils.media-ltlg(){
     width: 100%;
@@ -16,11 +20,23 @@
   &__title {
     font-size: utils.pxToRem(40px);
     font-weight: bold;
+    width: max-content;
+
+    @include utils.media-lg(){
+      font-size: utils.pxToRem(24px);
+    }
+    @include utils.media-xs(){
+      font-size: utils.pxToRem(24px);
+    }
   }
 
   &__description {
     margin-bottom: utils.pxToRem(20px);
     color: #666;
+    
+    @include utils.media-lg(){
+      max-width: utils.pxToRem(290px);
+    }
   }
 
   &__addToCart {
@@ -30,6 +46,11 @@
 
     @include utils.media-xs(){
       gap: utils.pxToRem(10px);
+    }
+
+    @include utils.media-lg(){
+      max-width: utils.pxToRem(287px);
+      gap: utils.pxToRem(25px);
     }
   }
 }

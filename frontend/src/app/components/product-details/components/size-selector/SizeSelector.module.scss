@@ -12,14 +12,24 @@
   &__options {
     display: flex;
     gap: utils.pxToRem(10px);
-
+    
     @include utils.media-xs(){
       display: grid;
       grid-template-columns: repeat(2,1fr);
     }
+
+    @include utils.media-lg(){
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      width: max-content;
+    }
   }
 
   &__button {
+    @include utils.media-lg(){
+      width: 100px;
+    }
+
     &.selected {
       background: #000;
       color: #fff;

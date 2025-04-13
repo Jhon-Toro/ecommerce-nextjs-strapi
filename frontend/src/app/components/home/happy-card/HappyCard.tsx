@@ -1,9 +1,10 @@
-import Rating from '@/app/shared-components/rating/Rating';
-import styles from './HappyCard.module.scss';
+import { FC } from 'react';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { HappyCardProps } from './interfaces/HappyCardProp.interface';
+import Rating from '@/app/shared-components/rating/Rating';
+import styles from './HappyCard.module.scss';
 
-const HappyCard: React.FC<HappyCardProps> = ({ name, rating, text }) => {
+const HappyCard: FC<HappyCardProps> = ({ name, rating, text }) => {
   return (
     <div className={styles.card}>
       <div className={styles.header}>

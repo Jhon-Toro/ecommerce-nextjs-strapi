@@ -1,39 +1,90 @@
-// src/components/ProductDetails/Reviews.module.scss
+@use 'src/styles/utils' as utils;
+
 .reviews {
-    padding: 20px;
-    
-    h2 {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
+  padding: utils.pxToRem(16px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: utils.pxToRem(40px);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_length {
+      font-size: utils.pxToRem(16px);
+      font-weight: 400;
+      opacity: 60%;
     }
-  
-    .filters {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-  
-      button {
-        padding: 10px 20px;
-        border: 1px solid #ccc;
-        border-radius: 20px;
-        background: #fff;
-        cursor: pointer;
-  
-        &:last-child {
-          background: #000;
-          color: #fff;
-        }
+    &_tally {
+      font-size: utils.pxToRem(20px);
+      font-weight: 700;
+
+      @include utils.media-ltmd(){
+        font-size: utils.pxToRem(18px);
       }
     }
+  }
   
-    .loadMore {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      background: #fff;
-      cursor: pointer;
+  &__controls {
+    display: flex;
+    gap: utils.pxToRem(12px);
+  }
+
+  &__filter {
+    padding: utils.pxToRem(8px);
+    font-size: utils.pxToRem(14px);
+    border: utils.pxToRem(1px )solid #ccc;
+    border-radius: utils.pxToRem(4px);
+    background: #fff;
+    cursor: pointer;
+
+    @include utils.media-ltmd(){
+      font-size: utils.pxToRem(12px);
+      padding: utils.pxToRem(6px )utils.pxToRem(12px);
     }
   }
+  
+  &__writeReview {
+    padding: utils.pxToRem(8px )utils.pxToRem(16px);
+    font-size: utils.pxToRem(14px);
+    font-weight: 500;
+    color: #fff;
+    background: #000;
+    border: none;
+    border-radius: utils.pxToRem(4px);
+    cursor: pointer;
+
+    @include utils.media-ltmd(){
+      font-size: utils.pxToRem(12px);
+      padding: utils.pxToRem(6px )utils.pxToRem(12px);
+    }
+  }
+  
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: utils.pxToRem(26px);
+
+    @include utils.media-ltmd(){
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .tally {
+    font-size: utils.pxToRem(18px);
+  }
+
+  .filter,
+  .writeReview {
+    font-size: utils.pxToRem(12px);
+    padding: utils.pxToRem(6px )utils.pxToRem(12px);
+  }
+
+  .reviewList {
+    grid-template-columns: 1fr;
+  }
+}

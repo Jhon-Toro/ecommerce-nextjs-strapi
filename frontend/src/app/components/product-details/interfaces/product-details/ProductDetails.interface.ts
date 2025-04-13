@@ -6,17 +6,18 @@ export interface Product {
   price: number;
   discountPrice: number;
   discount: number;
-  description: string;
+  description: {
+    overview: string;
+    features: string[];
+    origin: string;
+    company: {
+      name: string;
+      description: string;
+    };
+    careInstructions: string;
+  };
   mainImage: string;
   additionalImages: string[];
   colors: { name: string; hex: string }[];
   sizes: string[];
-  reviews: Review[];
-}
-
-export interface Review {
-  author: string;
-  rating: number;
-  comment: string;
-  date: string;
 }

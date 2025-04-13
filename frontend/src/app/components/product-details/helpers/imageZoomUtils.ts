@@ -1,4 +1,4 @@
-import { IMAGE_CONFIG } from '../constants/ImageConfig';
+import { IMAGE_CONFIG } from '../constants/ImageConfig.constant';
 import { Position } from '../interfaces/position/Position.interface';
 import { Rect } from '../interfaces/rect/Rect.interface';
 

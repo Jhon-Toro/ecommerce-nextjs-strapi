@@ -3,12 +3,17 @@
 .rating {
   display: flex;
   align-items: center;
+  width: max-content;
 
   .star {
     display: inline-block;
     margin: 0 utils.pxToRem(2px);
     transition: transform 0.2s ease;
 
+    &:first-child {
+      margin-left: 0;
+    }
+    
     &.full {
       color: #f59e0b;
     }

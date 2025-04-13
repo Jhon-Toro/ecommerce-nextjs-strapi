@@ -15,6 +15,10 @@
     display: block;
   }
 
+  @include utils.media-lg(){
+    top: utils.pxToRem(550px);
+    left: 0;
+  }
   @include utils.media-ltlg(){
     top: utils.pxToRem(550px);
     left: 0;

@@ -1,8 +1,9 @@
+import { FC } from 'react';
+import { ZoomedImageProps } from '../../interfaces/zoomed-image/ZoomedImage.interface';
 import Image from 'next/image';
 import styles from './ZoomedImage.module.scss';
-import { ZoomedImageProps } from '../../interfaces/zoomed-image/ZoomedImage.interface';
 
-const ZoomedImage: React.FC<ZoomedImageProps> = ({
+const ZoomedImage: FC<ZoomedImageProps> = ({
   currentMainImage,
   width,
   height,
@@ -11,7 +12,7 @@ const ZoomedImage: React.FC<ZoomedImageProps> = ({
   translateY,
 }) => {
   return (
-    <div className={styles.zoomed}>
+    <article className={styles.zoomed}>
       <Image
         src={currentMainImage}
         alt="Enlarged image of the product"
@@ -22,7 +23,7 @@ const ZoomedImage: React.FC<ZoomedImageProps> = ({
           transform: `translate(-${translateX}px, -${translateY}px)`,
         }}
       />
-    </div>
+    </article>
   );
 };
 

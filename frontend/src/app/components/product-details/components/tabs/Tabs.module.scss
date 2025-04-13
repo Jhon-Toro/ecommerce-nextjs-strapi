@@ -1,0 +1,64 @@
+@use "src/styles/utils" as utils;
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: utils.pxToRem(1px) solid #00000021;
+  margin-bottom: utils.pxToRem(24px);
+  margin-top: utils.pxToRem(48px);
+
+  &__tab {
+    background: none;
+    border: none;
+    padding: utils.pxToRem(8px) utils.pxToRem(16px);
+    font-size: utils.pxToRem(20px);
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    color: #00000098;
+    transition: color 0.3s ease, font-weight 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      color: #000000cc;
+      transform: translateY(utils.pxToRem(-2px));
+    }
+
+    &.active {
+      font-weight: 700;
+      color: black;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: utils.pxToRem(-1px);
+        left: 0;
+        width: 100%;
+        height: utils.pxToRem(2px);
+        background: #000;
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:not(.active)::after {
+      content: '';
+      position: absolute;
+      bottom: utils.pxToRem(-1px);
+      left: 0;
+      width: 100%;
+      height: utils.pxToRem(2px);
+      background: #000;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  @include utils.media-ltlg() {
+    &__tab {
+      font-size: utils.pxToRem(14px);
+      padding: utils.pxToRem(8px) utils.pxToRem(12px);
+    }
+  }
+}

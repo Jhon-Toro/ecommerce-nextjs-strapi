@@ -1,12 +1,13 @@
-import styles from './QuantityControl.module.scss';
+import { FC } from 'react';
 import Button from '@/app/shared-components/button/Button';
+import styles from './QuantityControl.module.scss';
 
 interface QuantityControlProps {
   quantity: number;
   setQuantity: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const QuantityControl: React.FC<QuantityControlProps> = ({ quantity, setQuantity }) => {
+const QuantityControl: FC<QuantityControlProps> = ({ quantity, setQuantity }) => {
   const handleDecrement = () => {
     setQuantity(quantity > 1 ? quantity - 1 : 1);
   };

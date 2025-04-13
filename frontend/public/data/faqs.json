@@ -1,0 +1,17 @@
+[
+    {
+      "id": "1",
+      "question": "What is the material of this t-shirt?",
+      "answer": "The t-shirt is made of 100% premium cotton, ensuring comfort and durability."
+    },
+    {
+      "id": "2",
+      "question": "How should I wash this t-shirt?",
+      "answer": "Machine wash cold with like colors, tumble dry low. Do not iron the print."
+    },
+    {
+      "id": "3",
+      "question": "What sizes are available?",
+      "answer": "The t-shirt is available in sizes XS, S, M, L, XL, and XXL."
+    }
+]

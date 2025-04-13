@@ -12,6 +12,9 @@
   padding: 0 utils.pxToRem(5px);
   text-decoration: none;
 
+  @include utils.media-lg(){
+    width: utils.pxToRem(130px);
+  }
   &__button {
     background: none;
     border: none;

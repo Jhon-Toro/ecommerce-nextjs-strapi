@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import AdditionalImages from '../additional-images/AdditionalImages';
+import { useState, useEffect, FC } from 'react';
 import { ProductImagesProps } from '../../interfaces/product-images/ProductImages.interface';
+import { IMAGE_CONFIG } from '../../constants/ImageConfig.constant';
+import AdditionalImages from '../additional-images/AdditionalImages';
 import MainImage from '../main-image/MainImage';
 import styles from './ProductImages.module.scss';
-import { IMAGE_CONFIG } from '../../constants/ImageConfig';
 
-const ProductImages: React.FC<ProductImagesProps> = ({ mainImage, additionalImages }) => {
+const ProductImages: FC<ProductImagesProps> = ({ mainImage, additionalImages }) => {
   const [currentMainImage, setCurrentMainImage] = useState(mainImage);
   const [isMobile, setIsMobile] = useState(false);
   

@@ -1,20 +1,16 @@
 'use client'
 
-import { useState } from 'react';
-import styles from './ProductInfo.module.scss';
-import { Product } from '../../interfaces/product-details/ProductDetails.interface';
+import { FC, useState } from 'react';
+import { ProductInfoProps } from '../../interfaces/product-info-props/ProductInfoProps.interface';
 import Rating from '@/app/shared-components/rating/Rating';
 import Button from '@/app/shared-components/button/Button';
 import QuantityControl from '../quantity-control/QuantityControl';
 import ProductPrice from '@/app/shared-components/product-price/ProductPrice';
 import ColorSelector from '@/app/shared-components/select-color/SelectColor';
 import SizeSelector from '@/app/components/product-details/components/size-selector/SizeSelector';
+import styles from './ProductInfo.module.scss';
 
-interface ProductInfoProps {
-  product: Product;
-}
-
-const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
+const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const [quantity, setQuantity] = useState(1);
@@ -24,7 +20,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
       <h2 className={styles.product__title}>{product.name}</h2>
       <Rating rating={product.rating} size="extra-medium" />
       <ProductPrice price={product.price} discountPrice={product.discountPrice} discount={product.discount} />
-      <p className={styles.product__description}>{product.description}</p>
+      <p className={styles.product__description}>{product.description.overview}</p>
 
       <ColorSelector
         colors={product.colors}
