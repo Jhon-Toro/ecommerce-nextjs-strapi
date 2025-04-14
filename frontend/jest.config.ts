@@ -25,6 +25,7 @@ const config: Config = {
     '!src/**/*.d.ts',
     '!src/**/index.ts',
     '!src/**/*.constant.ts',
+    '!src/**/*.ts',
   ],
 };
 
