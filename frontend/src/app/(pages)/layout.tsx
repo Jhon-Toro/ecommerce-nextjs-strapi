@@ -21,9 +21,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         <Navbar />
         <main>
           {children}
-          <SpeedInsights />
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html> 
   );
