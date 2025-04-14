@@ -4,6 +4,7 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Banner from "../components/banner/Banner";
 import "../styles.scss";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
@@ -18,7 +19,10 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       <body className={poppins.className}>
         <Banner />
         <Navbar />
-        <main>{children}</main>
+        <main>
+          {children}
+          <SpeedInsights />
+        </main>
         <Footer />
       </body>
     </html> 
