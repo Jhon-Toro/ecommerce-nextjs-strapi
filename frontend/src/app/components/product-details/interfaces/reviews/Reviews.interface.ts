@@ -5,8 +5,8 @@ export interface Review {
     text: string;
     date: string;
     verified: boolean;
-}
-
-export interface ReviewsProps {
-reviews: Review[];
-}   
+  }
+  
+  export interface ReviewsProps {
+    review: Review[];
+  }

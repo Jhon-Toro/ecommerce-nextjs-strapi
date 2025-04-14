@@ -64,7 +64,7 @@ const ProductDetails = () => {
         {activeTab === 'Product Details' && (
           <ProductDescription description={product.description} />
         )}
-        {activeTab === 'Rating & Reviews' && <Reviews reviews={reviews} />}
+        {activeTab === 'Rating & Reviews' && <Reviews review={reviews} />}
         {activeTab === 'FAQs' && <Faqs faqs={faqs} />}
       </div>
       <FeaturedProducts products={products.topSelling} category="YOU MIGHT ALSO LIKE" />

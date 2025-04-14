@@ -7,11 +7,11 @@ import styles from './Reviews.module.scss';
 import Button from '@/app/shared-components/button/Button';
 
 
-const Reviews: FC<ReviewsProps> = ({ reviews }) => {
+const Reviews: FC<ReviewsProps> = ({ review }) => {
   const [sortOrder, setSortOrder] = useState('Latest');
   const [visibleReviews, setVisibleReviews] = useState(6);
 
-  const sortedReviews = [...reviews].sort((a, b) => {
+  const sortedReviews = [...review].sort((a, b) => {
     if (sortOrder === 'Latest') return new Date(b.date).getTime() - new Date(a.date).getTime();
     
     return new Date(a.date).getTime() - new Date(b.date).getTime();
@@ -28,7 +28,7 @@ const Reviews: FC<ReviewsProps> = ({ reviews }) => {
   return (
     <section className={styles.reviews}>
       <header className={styles.reviews__header}>
-        <h2 className={styles.reviews__header_tally}>All Reviews <span className={styles.reviews__header_length}>({reviews.length})</span></h2>
+        <h2 className={styles.reviews__header_tally}>All Reviews <span className={styles.reviews__header_length}>({review.length})</span></h2>
         <div className={styles.reviews__controls}>
           <select
             className={styles.reviews__filter}
@@ -47,7 +47,7 @@ const Reviews: FC<ReviewsProps> = ({ reviews }) => {
           <ReviewCard key={review.id} review={review} />
         ))}
       </article>
-      {visibleReviews < reviews.length && (
+      {visibleReviews < review.length && (
         <Button type='secondary' text='Load More Reviews' size='medium' onClick={loadMoreReviews}/>
       )}
     </section>
