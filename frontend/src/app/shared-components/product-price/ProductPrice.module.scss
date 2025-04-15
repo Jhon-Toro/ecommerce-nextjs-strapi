@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   gap: utils.pxToRem(10px);
-
+  margin: utils.pxToRem(16px) 0;
   &__discount {
     text-decoration: line-through;
     color: rgb(0, 0, 0);

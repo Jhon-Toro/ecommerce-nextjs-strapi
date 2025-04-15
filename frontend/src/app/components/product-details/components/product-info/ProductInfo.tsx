@@ -9,6 +9,7 @@ import ProductPrice from '@/app/shared-components/product-price/ProductPrice';
 import ColorSelector from '@/app/shared-components/select-color/SelectColor';
 import SizeSelector from '@/app/components/product-details/components/size-selector/SizeSelector';
 import styles from './ProductInfo.module.scss';
+import Divider from '../divider/Divider';
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
@@ -22,17 +23,21 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
       <ProductPrice price={product.price} discountPrice={product.discountPrice} discount={product.discount} />
       <p className={styles.product__description}>{product.description.overview}</p>
 
+      <Divider/>
       <ColorSelector
         colors={product.colors}
         selectedColor={selectedColor}
         onColorChange={setSelectedColor}
       />
+
+      <Divider/>
       <SizeSelector
         sizes={product.sizes}
         selectedSize={selectedSize}
         onSizeChange={setSelectedSize}
       />
 
+      <Divider/>
       <section className={styles.product__addToCart}>
         <QuantityControl
           quantity={quantity}

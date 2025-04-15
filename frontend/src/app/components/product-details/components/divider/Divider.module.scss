@@ -1,0 +1,7 @@
+@use '@/styles/utils' as utils;
+
+.hr {
+    width: 100%;
+    opacity: 0.5;
+    margin: utils.pxToRem(20px) 0;
+}
