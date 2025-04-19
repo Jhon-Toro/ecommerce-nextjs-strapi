@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
-import Banner from "../components/banner/Banner";
+import Navbar from "@/app/components/navbar/Navbar";
+import Footer from "@/app/components/footer/Footer";
+import Banner from "@/app/components/banner/Banner";
 import "../styles.scss";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 

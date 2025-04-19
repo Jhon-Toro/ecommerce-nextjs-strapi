@@ -7,9 +7,9 @@ import Button from '@/app/shared-components/button/Button';
 import QuantityControl from '../quantity-control/QuantityControl';
 import ProductPrice from '@/app/shared-components/product-price/ProductPrice';
 import ColorSelector from '@/app/shared-components/select-color/SelectColor';
-import SizeSelector from '@/app/components/product-details/components/size-selector/SizeSelector';
-import styles from './ProductInfo.module.scss';
+import SizeSelector from '@/app/modules/product-details/components/size-selector/SizeSelector';
 import Divider from '../divider/Divider';
+import styles from './ProductInfo.module.scss';
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState(product.colors[0].name);

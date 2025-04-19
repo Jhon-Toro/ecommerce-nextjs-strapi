@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import ProductPage from './page';
 
-jest.mock('@/app/components/product-details/ProductDetails', () => {
+jest.mock('@/app/modules/product-details/ProductDetails', () => {
   const MockProductDetails = () => <div data-testid="product-details">Product Details</div>;
   MockProductDetails.displayName = 'MockProductDetails';
   return MockProductDetails;

@@ -19,13 +19,13 @@ global.fetch = jest.fn(() =>
   })
 ) as jest.Mock;
 
-jest.mock('../components/home/hero/Hero', () => {
+jest.mock('@/app/modules/home/hero/Hero', () => {
   const MockHero = () => <div data-testid="hero" />;
   MockHero.displayName = 'MockHero';
   return MockHero;
 });
 
-jest.mock('../components/home/home-products/FeaturedProducts', () => {
+jest.mock('@/app/modules/home/home-products/FeaturedProducts', () => {
   const MockProducts = ({ category }: Product) => (
     <div data-testid={`home-products-${category}`}>{category}</div>
   );
@@ -33,13 +33,13 @@ jest.mock('../components/home/home-products/FeaturedProducts', () => {
   return MockProducts;
 });
 
-jest.mock('../components/home/home-categories/HomeCategories', () => {
+jest.mock('@/app/modules/home/home-categories/HomeCategories', () => {
   const MockCategories = () => <div data-testid="home-categories" />;
   MockCategories.displayName = 'MockCategories';
   return MockCategories;
 });
 
-jest.mock('../components/home/happy-customers/HappyCustomers', () => {
+jest.mock('@/app/modules/home/happy-customers/HappyCustomers', () => {
   const MockCustomers = () => <div data-testid="happy-customers" />;
   MockCustomers.displayName = 'MockCustomers';
   return MockCustomers;

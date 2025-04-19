@@ -16,7 +16,7 @@ jest.mock('@/app/shared-components/button/Button', () => {
   return MockButton;
 });
 
-jest.mock('@/app/components/product-details/components/quantity-control/QuantityControl', () => {
+jest.mock('@/app/modules/product-details/components/quantity-control/QuantityControl', () => {
   const MockQuantityControl: React.FC<{
     quantity: number;
     setQuantity: (q: number) => void;
@@ -44,7 +44,7 @@ jest.mock('@/app/shared-components/select-color/SelectColor', () => {
   return MockColorSelector;
 });
 
-jest.mock('@/app/components/product-details/components/size-selector/SizeSelector', () => {
+jest.mock('@/app/modules/product-details/components/size-selector/SizeSelector', () => {
   const MockSizeSelector: React.FC<{
     sizes: string[];
     selectedSize: string;
@@ -53,7 +53,7 @@ jest.mock('@/app/components/product-details/components/size-selector/SizeSelecto
   return MockSizeSelector;
 });
 
-jest.mock('@/app/components/product-details/components/divider/Divider', () => {
+jest.mock('@/app/modules/product-details/components/divider/Divider', () => {
   const MockDivider: React.FC = () => <hr />;
   return MockDivider;
 });

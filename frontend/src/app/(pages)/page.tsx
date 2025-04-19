@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import Hero from "../components/home/hero/Hero";
-import HomeProducts from "../components/home/home-products/FeaturedProducts";
-import HomeCategories from "../components/home/home-categories/HomeCategories";
-import { Product } from "../shared-components/product/interfaces/Product.interface";
-import HappyCustomers from "../components/home/happy-customers/HappyCustomers";
+import Hero from "@/app/modules/home/hero/Hero";
+import HomeProducts from "@/app/modules/home/home-products/FeaturedProducts";
+import HomeCategories from "@/app/modules/home/home-categories/HomeCategories";
+import { Product } from "@/app/shared-components/product/interfaces/Product.interface";
+import HappyCustomers from "@/app/modules/home/happy-customers/HappyCustomers";
 
 export default function Home() {
   const [products, setProducts] = useState<{ newArrivals: Product[]; topSelling: Product[] } | null>(null);

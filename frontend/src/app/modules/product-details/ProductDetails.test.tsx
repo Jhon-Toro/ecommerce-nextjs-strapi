@@ -43,20 +43,20 @@ jest.mock(
   })
 );
 
-jest.mock("@/app/components/product-details/components/faqs/Faqs", () => {
+jest.mock("@/app/modules/product-details/components/faqs/Faqs", () => {
   const Faqs = () => <div>FAQs Component</div>;
   Faqs.displayName = "Faqs";
   return Faqs;
 });
 
-jest.mock("@/app/components/product-details/components/reviews/Reviews", () => {
+jest.mock("@/app/modules/product-details/components/reviews/Reviews", () => {
   const Reviews = () => <div>Reviews Component</div>;
   Reviews.displayName = "Reviews";
   return Reviews;
 });
 
 jest.mock(
-  "@/app/components/product-details/components/product-info/ProductInfo",
+  "@/app/modules/product-details/components/product-info/ProductInfo",
   () => {
     const ProductInfo = () => <div>ProductInfo Component</div>;
     ProductInfo.displayName = "ProductInfo";
@@ -65,7 +65,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/app/components/product-details/components/product-images/ProductImages",
+  "@/app/modules/product-details/components/product-images/ProductImages",
   () => {
     const ProductImages = () => <div>ProductImages Component</div>;
     ProductImages.displayName = "ProductImages";
@@ -73,7 +73,7 @@ jest.mock(
   }
 );
 
-jest.mock("@/app/components/product-details/components/tabs/Tabs", () => {
+jest.mock("@/app/modules/product-details/components/tabs/Tabs", () => {
   interface TabsProps {
     onTabChange: (tab: string) => void;
   }
