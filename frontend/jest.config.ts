@@ -6,7 +6,8 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/(.+)$': '<rootDir>/src/$1',
+    '^next/font/google$': '<rootDir>/__mocks__/next/font/google.ts',
   },
   transform: {
     '^.+\\.(ts|tsx)$': [
@@ -18,6 +19,7 @@ const config: Config = {
   },
   transformIgnorePatterns: [
     '/node_modules/(?!(@babel|@testing-library|identity-obj-proxy|next))',
+    'node_modules/(?!(.*@vercel/speed-insights).*)'
   ],
   collectCoverage: true,
   collectCoverageFrom: [
@@ -27,6 +29,8 @@ const config: Config = {
     '!src/**/*.constant.ts',
     '!src/**/*.ts',
   ],
+  maxWorkers: 1,
+  verbose: true,
 };
 
 export default config;

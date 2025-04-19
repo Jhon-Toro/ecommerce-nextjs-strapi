@@ -9,7 +9,7 @@ import mockProduct from '../../../assets/mockProduct.json';
 import ProductInfo from './components/product-info/ProductInfo';
 import styles from './ProductDetails.module.scss';
 import ProductImages from './components/product-images/ProductImages';
-import FeaturedProducts from '../home/home-products/FeatuedProducts';
+import FeaturedProducts from '../home/home-products/FeaturedProducts';
 import Tabs from './components/tabs/Tabs';
 import ProductDescription from './components/product-description/ProductDescription';
 import Faqs from './components/faqs/Faqs';

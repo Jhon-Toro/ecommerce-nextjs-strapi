@@ -13,18 +13,26 @@ export const metadata: Metadata = {
   description: "Labs Develop",
 };
 
+function LayoutBody({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Banner />
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+      <SpeedInsights />
+    </>
+  );
+}
+
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Banner />
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
-        <SpeedInsights />
+        <LayoutBody>{children}</LayoutBody>
       </body>
     </html> 
   );
 }
+
+export { LayoutBody }; 

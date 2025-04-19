@@ -2,7 +2,7 @@ import styles from './Divider.module.scss';
 
 const Divider = () => {
   return (
-    <hr className={styles.hr}/>
+    <hr role='separator' className={styles.hr}/>
   )
 }
 

@@ -1,11 +1,9 @@
-import React from 'react';
 import '@testing-library/jest-dom';
-import type { ImageProps } from 'next/image';
+import '@/app/__mocks__/__shared-components__/vercel-speed-insights';
+import '@/app/__mocks__/next/image/image';
 
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: (props: ImageProps) => {
-    const { src, alt, ...rest } = props;
-    return React.createElement('img', { src: String(src), alt, ...rest });
-  },
-}));
+import { TextEncoder, TextDecoder as NodeTextDecoder } from 'util';
+
+if (typeof globalThis.TextEncoder === 'undefined') globalThis.TextEncoder = TextEncoder;
+
+if (typeof globalThis.TextDecoder === 'undefined') globalThis.TextDecoder = NodeTextDecoder as unknown as typeof globalThis.TextDecoder;
