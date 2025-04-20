@@ -15,7 +15,7 @@ const FeaturedProducts: FC<FeaturedProductsProps> = ({ products, category }) => 
           <ProductCard key={product.id} {...product} />
         ))}
       </div>
-      <Button type='secondary' text='View All' size='medium'/>
+      <Button type='secondary' text='View All' size='medium' typeAttribute='button'/>
     </section>
   );
 };

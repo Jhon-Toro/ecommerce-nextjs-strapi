@@ -48,7 +48,7 @@ const Reviews: FC<ReviewsProps> = ({ review }) => {
         ))}
       </article>
       {visibleReviews < review.length && (
-        <Button type='secondary' text='Load More Reviews' size='medium' onClick={loadMoreReviews}/>
+        <Button type='secondary' text='Load More Reviews' size='medium' onClick={loadMoreReviews} typeAttribute='button'/>
       )}
     </section>
   );

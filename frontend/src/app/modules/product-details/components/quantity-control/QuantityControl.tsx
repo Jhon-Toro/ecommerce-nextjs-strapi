@@ -19,7 +19,8 @@ const QuantityControl: FC<QuantityControlProps> = ({ quantity, setQuantity }) =>
         onClick={handleDecrement}
         className={styles.quantity__button}
         type={'text'}
-        size={'small'}
+        size={'small'} 
+        typeAttribute='button'     
       />
       <span className={styles.quantity__value}>{quantity}</span>
       <Button
@@ -27,7 +28,8 @@ const QuantityControl: FC<QuantityControlProps> = ({ quantity, setQuantity }) =>
         onClick={handleIncrement}
         className={styles.quantity__button}
         type={'text'}
-        size={'small'}
+        size={'small'} 
+        typeAttribute='button'     
       />
     </div>
   );

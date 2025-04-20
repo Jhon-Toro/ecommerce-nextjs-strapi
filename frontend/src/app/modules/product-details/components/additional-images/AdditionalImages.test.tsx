@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import AdditionalImages from './AdditionalImages';
 import '@testing-library/jest-dom';
+import Image from 'next/image';
 
 jest.mock('../thumbnail/Thumbnail', () => {
     const Thumbnail: React.FC<{
@@ -16,7 +17,7 @@ jest.mock('../thumbnail/Thumbnail', () => {
         onClick={onSelect}
         data-testid={`thumbnail-${alt}`}
       >
-        <img src={image} alt={alt} />
+        <Image src={image} alt={alt} />
       </div>
     );
   

@@ -26,13 +26,13 @@ const Products = () => {
     [products, startIndex, endIndex]
   );
 
-  const filterCriteria: FilterCriteria = {
+  const filterCriteria: FilterCriteria = useMemo(() => ({
     category,
     priceRange,
     colors,
     sizes,
     dressStyles,
-  };
+  }), [category, priceRange, colors, sizes, dressStyles]);
 
   useEffect(() => {
     const filterPipeline = createFilterPipeline(filterCriteria);
@@ -40,7 +40,7 @@ const Products = () => {
       filterPipeline.every((filter) => filter(product))
     );
     setProducts(filteredProducts);
-  }, [category, priceRange, colors, sizes, dressStyles]);
+  }, [category, priceRange, colors, sizes, dressStyles, filterCriteria]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
