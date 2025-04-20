@@ -28,7 +28,7 @@ const Hero = () => {
       <article className={styles.hero__article}>
         <h1 className={styles.hero__article_title}>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
         <p  className={styles.hero__article_paragraph}>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-        <Button type="primary" text="Shop Now" size="medium"/>
+        <Button type="primary" text="Shop Now" size="medium" typeAttribute='button'/>
 
         <div className={styles.hero__article_stats}>
           <StatsCounter endValue={200} label="International Brands" />
