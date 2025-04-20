@@ -1,0 +1,64 @@
+@use "src/styles/utils" as utils;
+
+.price {
+  margin-top: utils.pxToRem(10px);
+
+  &__range {
+    position: relative;
+    width: 100%;
+    height: utils.pxToRem(30px);
+
+    input[type="range"] {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+
+      &::-webkit-slider-runnable-track {
+        height: utils.pxToRem(6px);
+        background: #e5e5e5;
+        border-radius: utils.pxToRem(3px);
+      }
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: utils.pxToRem(20px);
+        height: utils.pxToRem(20px);
+        background: #000;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: utils.pxToRem(-7px);
+      }
+
+      &:nth-child(1) {
+        &::-webkit-slider-runnable-track {
+          background: #e5e5e5;
+        }
+      }
+
+      &:nth-child(2) {
+        &::-webkit-slider-runnable-track {
+          background: linear-gradient(
+            to right,
+            transparent calc((var(--min-value) / 250) * 100%),
+            #000 calc((var(--min-value) / 250) * 100%),
+            #000 calc((var(--max-value) / 250) * 100%),
+            transparent calc((var(--max-value) / 250) * 100%)
+          );
+        }
+      }
+    }
+  }
+
+  &__labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: utils.pxToRem(14px);
+    margin-top: utils.pxToRem(8px);
+    color: #333;
+  }
+}

@@ -27,7 +27,7 @@ describe(SizeSelector.name, () => {
     });
 
     const selectedButton = screen.getByText('M');
-    expect(selectedButton).toHaveClass('selected');
+    expect(selectedButton.parentElement).toHaveClass('selected');
   });
 
   test('calls onSizeChange when a size is clicked', () => {

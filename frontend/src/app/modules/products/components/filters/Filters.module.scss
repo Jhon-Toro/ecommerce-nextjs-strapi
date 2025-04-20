@@ -1,0 +1,19 @@
+@use "src/styles/utils" as utils;
+
+.filters {
+  background-color: #fff;
+  border-radius: utils.pxToRem(20px);
+  padding: utils.pxToRem(20px);
+  border: utils.pxToRem(1px) solid rgba(0, 0, 0, 0.1);
+  width: utils.pxToRem(300px);
+
+  @include utils.media-lg() {
+    width: utils.pxToRem(290px);
+  }
+
+  h2 {
+    font-size: utils.pxToRem(18px);
+    font-weight: bold;
+    margin-bottom: utils.pxToRem(20px);
+  }
+}

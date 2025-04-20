@@ -1,0 +1,39 @@
+@use '@/styles/utils' as utils;
+
+.products {
+    display: grid;
+    grid-template-areas:
+        "filters products";
+    margin-bottom: utils.pxToRem(40px);
+    @include utils.container();
+    @include utils.media-lg() {
+        gap: utils.pxToRem(24px);
+    }
+
+    &__filters {
+        grid-area: filters;
+        max-width: max-content;
+    }
+
+    &__cards {
+        grid-area: products;
+
+        &__product {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            gap: utils.pxToRem(16px);
+
+            @include utils.media-lg() {
+                grid-template-columns: repeat(2, 1fr);
+                gap: utils.pxToRem(26px);
+            }
+            @include utils.media-ltlg() {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include utils.media-xs() {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}

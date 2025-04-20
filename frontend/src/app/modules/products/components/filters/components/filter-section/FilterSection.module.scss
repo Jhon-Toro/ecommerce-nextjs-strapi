@@ -1,0 +1,36 @@
+@use '@/styles/utils' as utils;
+
+.filter {
+  margin-bottom: utils.pxToRem(20px);
+
+  &__toggleButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 5px 0;
+    cursor: pointer;
+  
+    &__title {
+      font-size: utils.pxToRem(14px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #333;
+      letter-spacing: 0.05em;
+    }
+  
+    &__chevronIcon {
+      width: utils.pxToRem(16px);
+      height: utils.pxToRem(16px);
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__options {
+    margin-top: utils.pxToRem(10px);
+  }
+}
+

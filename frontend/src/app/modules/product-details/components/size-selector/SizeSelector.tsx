@@ -16,8 +16,9 @@ const SizeSelector: FC<SizeSelectorProps> = ({ sizes, selectedSize, onSizeChange
             text={size}
             size="extra-small-product"
             margin="zero"
-            className={clsx(styles.sizes__button, {[styles.selected] : selectedSize === size})}
-            onClick={() => onSizeChange(size)}
+            className={clsx(styles.sizes__button, { [styles.selected]: selectedSize === size })}
+            onClick={() => onSizeChange(size)} 
+            typeAttribute='submit'
           />
         ))}
       </div>

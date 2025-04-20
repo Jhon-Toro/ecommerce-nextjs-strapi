@@ -19,7 +19,8 @@ const config: Config = {
   },
   transformIgnorePatterns: [
     '/node_modules/(?!(@babel|@testing-library|identity-obj-proxy|next))',
-    'node_modules/(?!(.*@vercel/speed-insights).*)'
+    'node_modules/(?!(.*@vercel/speed-insights).*)',
+    'node_modules/(?!(.*@vercel/analytics).*)'
   ],
   collectCoverage: true,
   collectCoverageFrom: [

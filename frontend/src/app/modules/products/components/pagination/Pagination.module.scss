@@ -1,0 +1,36 @@
+@use "src/styles/utils" as utils;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: utils.pxToRem(16px);
+  margin-top: utils.pxToRem(32px);
+
+  .pageNumbers {
+    display: flex;
+    gap: utils.pxToRem(8px);
+
+    button {
+      padding: utils.pxToRem(8px) utils.pxToRem(12px);
+      border: none;
+      background: none;
+      cursor: pointer;
+      max-width: max-content;
+      color: black;
+      &.active {
+        background: #f0f0f0;
+        color: #fff;
+      }
+
+      &:hover:not(.active) {
+        background: #f0f0f0;
+      }
+    }
+
+    span {
+      padding: utils.pxToRem(8px);
+      color: #666;
+    }
+  }
+}

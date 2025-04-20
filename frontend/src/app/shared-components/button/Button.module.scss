@@ -1,7 +1,9 @@
 @use 'src/styles/utils' as utils;
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: utils.pxToRem(12px) utils.pxToRem(24px);
   font-size: utils.pxToRem(16px);
   font-weight: medium;
@@ -12,12 +14,17 @@
   border: none;
   outline: none;
 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   &--primary {
     background-color: black;
     color: white;
     border: none;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: #333;
     }
   }
@@ -29,7 +36,8 @@
     font-weight: medium;
     font-size: utils.pxToRem(16px);
     margin: 0 auto;
-    &:hover {
+    border-radius: 20px;
+    &:hover:not(:disabled) {
       background-color: black;
       color: white;
     }
@@ -42,17 +50,19 @@
     font-weight: medium;
     font-size: utils.pxToRem(16px);
     margin: 0 auto;
-    &:hover {
+
+    &:hover:not(:disabled) {
       background-color: black;
       color: white;
     }
   }
+
   &--outline {
     background-color: transparent;
     color: black;
     border: utils.pxToRem(1px) solid black;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: black;
       color: white;
     }
@@ -64,7 +74,7 @@
     border: none;
     text-decoration: underline;
 
-    &:hover {
+    &:hover:not(:disabled) {
       color: #333;
     }
   }
@@ -74,19 +84,32 @@
     height: utils.pxToRem(30px);
   }
 
-  &--zero{
-    margin: 0;
-  }
-  
   &--extra-small-product {
     min-width: utils.pxToRem(86px);
     height: utils.pxToRem(46px);
     text-wrap-mode: nowrap;
   }
+  &--extra-small-filter {
+    min-width: utils.pxToRem(96px);
+    height: utils.pxToRem(39px);
+    text-wrap-mode: nowrap;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &--filter {
+    min-width: 100%;
+    height: utils.pxToRem(48px);
+  }
 
   &--small {
     width: utils.pxToRem(120px);
     height: utils.pxToRem(40px);
+  }
+
+  &--small-pagination {
+    min-width: utils.pxToRem(90px);
+    min-height: utils.pxToRem(36px);
+    border-radius: utils.pxToRem(8px);
   }
 
   &--medium {
@@ -102,14 +125,46 @@
   &--extra-large {
     width: utils.pxToRem(400px);
     height: utils.pxToRem(52px);
-    
-    @include utils.media-ltlg(){
+
+    @include utils.media-ltlg() {
       width: utils.pxToRem(236px);
       height: utils.pxToRem(44px);
     }
 
-    @include utils.media-xs(){
+    @include utils.media-xs() {
       width: utils.pxToRem(160px);
     }
+  }
+
+  &--zero {
+    margin: 0;
+  }
+
+  // Estilos para los iconos
+  .icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .iconSvg {
+    width: utils.pxToRem(16px); // Tamaño del ícono
+    height: utils.pxToRem(16px);
+    stroke-width: 2; // Ajusta el grosor del trazo si usas outline
+  }
+
+  &--icon-left {
+    .icon {
+      margin-right: utils.pxToRem(8px);
+    }
+  }
+
+  &--icon-right {
+    .icon {
+      margin-left: utils.pxToRem(8px);
+    }
+  }
+
+  .text {
+    display: inline-block;
   }
 }

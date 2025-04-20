@@ -7,4 +7,7 @@ export interface Product {
     image: string;
     category?: string;
     discount?: number;
+    color?: string;
+    size?: string;
+    dressStyle?: string;
 }
