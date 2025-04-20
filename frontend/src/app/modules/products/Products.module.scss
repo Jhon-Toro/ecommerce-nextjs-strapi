@@ -1,18 +1,48 @@
+// Products.module.scss
 @use '@/styles/utils' as utils;
 
 .products {
     display: grid;
     grid-template-areas:
         "filters products";
-    margin-bottom: utils.pxToRem(40px);
     @include utils.container();
-    @include utils.media-lg() {
-        gap: utils.pxToRem(24px);
+    gap: 0.5rem;
+
+    // Hide the toggle button on larger screens
+    .filterToggleButton {
+        display: none;
+        @include utils.media-ltlg() {
+            display: block;
+            padding: 0.5rem 1rem;
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
     }
 
     &__filters {
         grid-area: filters;
         max-width: max-content;
+
+        @include utils.media-ltlg() {
+            position: fixed;
+            top: 0;
+            left: -100%; // Hidden by default
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            z-index: 1000; // Above all other content
+            transition: left 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        &.filtersOpen {
+            @include utils.media-ltlg() {
+                left: 0; // Slide in when open
+            }
+        }
     }
 
     &__cards {
@@ -22,11 +52,10 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             justify-items: center;
-            gap: utils.pxToRem(16px);
+            gap: 1rem;
 
             @include utils.media-lg() {
                 grid-template-columns: repeat(2, 1fr);
-                gap: utils.pxToRem(26px);
             }
             @include utils.media-ltlg() {
                 grid-template-columns: repeat(2, 1fr);
@@ -35,5 +64,11 @@
                 grid-template-columns: repeat(1, 1fr);
             }
         }
+    }
+
+    // On mobile, adjust the grid to only show products when filters are hidden
+    @include utils.media-ltlg() {
+        grid-template-areas: "products";
+        grid-template-columns: 1fr;
     }
 }
