@@ -18,6 +18,8 @@
       cursor: pointer;
       max-width: max-content;
       color: black;
+      font-size: utils.pxToRem(16px);
+
       &.active {
         background: #f0f0f0;
         color: #fff;
@@ -31,6 +33,58 @@
     span {
       padding: utils.pxToRem(8px);
       color: #666;
+    }
+  }
+
+  // Responsive para pantallas medianas (tablets)
+  @media (max-width: utils.pxToRem(768px)) {
+    gap: utils.pxToRem(12px);
+    margin-top: utils.pxToRem(24px);
+
+    .pageNumbers {
+      gap: utils.pxToRem(6px);
+
+      button {
+        padding: utils.pxToRem(6px) utils.pxToRem(10px);
+        font-size: utils.pxToRem(14px);
+      }
+
+      span {
+        padding: utils.pxToRem(6px);
+      }
+    }
+
+    .navButton {
+      font-size: utils.pxToRem(14px);
+      padding: utils.pxToRem(6px) utils.pxToRem(10px);
+    }
+  }
+
+  // Responsive para pantallas pequeñas (móviles)
+  @media (max-width: utils.pxToRem(480px)) {
+    gap: utils.pxToRem(8px);
+    margin-top: utils.pxToRem(16px);
+    flex-wrap: wrap; // Permite que los elementos se envuelvan si no caben
+
+    .pageNumbers {
+      gap: utils.pxToRem(4px);
+
+      button {
+        padding: utils.pxToRem(4px) utils.pxToRem(8px);
+        font-size: utils.pxToRem(12px);
+        min-width: utils.pxToRem(28px); // Evita que los botones sean demasiado pequeños
+      }
+
+      // Opcional: Oculta los puntos suspensivos en móviles
+      span.ellipsis {
+        display: none;
+      }
+    }
+
+    .navButton {
+      font-size: utils.pxToRem(12px);
+      padding: utils.pxToRem(4px) utils.pxToRem(8px);
+      min-width: utils.pxToRem(80px); // Asegura que los botones "Previous" y "Next" sean legibles
     }
   }
 }

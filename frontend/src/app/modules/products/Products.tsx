@@ -14,22 +14,48 @@ import Pagination from './components/pagination/Pagination';
 import useClickOutside from '@/app/hooks/useClickOutside';
 import useEscKey from '@/app/hooks/useEscKey';
 import clsx from 'clsx';
+import TitleAllProducts from './components/filters/components/title-all-products/TitleAllProducts';
 
 const PRODUCTS_PER_PAGE = 9;
 
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const { category, priceRange, colors, sizes, dressStyles, isFiltersOpen, setIsFiltersOpen } = useFilterStore();
-  const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
-  const filtersRef = useRef<HTMLElement>(null);
-  const productsRef = useRef<HTMLElement>(null);
+  const { category, priceRange, colors, sizes, dressStyles, isFiltersOpen, setIsFiltersOpen, sortBy } = useFilterStore();
+
+  const filterCriteria: FilterCriteria = useMemo(
+    () => ({
+      category,
+      priceRange,
+      colors,
+      sizes,
+      dressStyles,
+      sortBy,
+    }),
+    [category, priceRange, colors, sizes, dressStyles, sortBy]
+  );
+
+  useEffect(() => {
+    const { filters, sortedProducts } = createFilterPipeline(filterCriteria);
+  
+    let filteredProducts: Product[] = productsData.filter((product) =>
+      filters.every((filter) => filter(product))
+    );
+    filteredProducts = sortedProducts(filteredProducts);
+    setProducts(filteredProducts);
+  }, [filterCriteria]);
+
+  const totalProducts = products.length;
+  const totalPages = Math.ceil(totalProducts / PRODUCTS_PER_PAGE);
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
   const endIndex = startIndex + PRODUCTS_PER_PAGE;
   const currentProducts = useMemo(
     () => products.slice(startIndex, endIndex),
     [products, startIndex, endIndex]
   );
+
+  const filtersRef = useRef<HTMLElement>(null);
+  const productsRef = useRef<HTMLElement>(null);
 
   useClickOutside(filtersRef, () => {
     if (isFiltersOpen) setIsFiltersOpen(false);
@@ -39,38 +65,25 @@ const Products = () => {
     setIsFiltersOpen(false);
   }, isFiltersOpen);
 
-
-  const filterCriteria: FilterCriteria = useMemo(() => ({
-    category,
-    priceRange,
-    colors,
-    sizes,
-    dressStyles,
-  }), [category, priceRange, colors, sizes, dressStyles]);
-  
-  useEffect(() => {
-    const filterPipeline = createFilterPipeline(filterCriteria);
-    const filteredProducts = productsData.filter((product) =>
-      filterPipeline.every((filter) => filter(product))
-    );
-    setProducts(filteredProducts);
-  }, [category, priceRange, colors, sizes, dressStyles, filterCriteria]);
-
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  
+
   return (
     <main className={styles.products} ref={productsRef}>
       <section
         ref={filtersRef}
-        className={clsx(styles.products__filters, { [styles.filtersOpen]: isFiltersOpen})}
+        className={clsx(styles.products__filters, { [styles.filtersOpen]: isFiltersOpen })}
       >
         <Filters />
       </section>
       <section className={styles.products__cards}>
-        <h2>Casual</h2>
+        <TitleAllProducts
+          currentPage={currentPage}
+          productsPerPage={PRODUCTS_PER_PAGE}
+          totalProducts={totalProducts}
+        />
         <article className={styles.products__cards__product}>
           {currentProducts.map((product) => (
             <ProductCard

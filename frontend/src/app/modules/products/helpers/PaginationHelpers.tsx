@@ -9,17 +9,19 @@ export const goToNextPage = (currentPage: number, totalPages: number, onPageChan
   if (currentPage < totalPages) onPageChange(currentPage + 1);
 };
 
-export const getPageRange = (currentPage: number, totalPages: number): { startPage: number; endPage: number } => {
-  const startPage = Math.max(1, currentPage - 2);
-  const endPage = Math.min(totalPages, currentPage + 2);
+export const getPageRange = (currentPage: number, totalPages: number, isMobile: boolean = false ): { startPage: number; endPage: number } => {
+  const maxPages = isMobile ? 3 : MAX_PAGES_TO_SHOW;
+  const startPage = Math.max(1, currentPage - Math.floor(maxPages / 2));
+  const endPage = Math.min(totalPages, startPage + maxPages - 1);
+
   return { startPage, endPage };
 };
 
-export const generatePageElements = (currentPage: number, totalPages: number, onPageChange: (page: number) => void): PageElement[] => {
+export const generatePageElements = (currentPage: number, totalPages: number, onPageChange: (page: number) => void, isMobile: boolean = false): PageElement[] => {
   const elements: PageElement[] = [];
-  const { startPage, endPage } = getPageRange(currentPage, totalPages);
+  const { startPage, endPage } = getPageRange(currentPage, totalPages, isMobile);
 
-  if (totalPages <= MAX_PAGES_TO_SHOW) {
+  if (totalPages <= (isMobile ? 3 : MAX_PAGES_TO_SHOW)) {
     for (let i = 1; i <= totalPages; i++) {
       elements.push({
         key: i,

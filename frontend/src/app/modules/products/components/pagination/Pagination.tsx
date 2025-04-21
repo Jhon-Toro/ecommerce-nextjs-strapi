@@ -5,13 +5,16 @@ import { goToPreviousPage, goToNextPage, generatePageElements } from '../../help
 import { PageElement, PaginationProps } from '../../interfaces/Pagination/Pagination.interface';
 import Button from '@/app/shared-components/button/Button';
 import styles from './Pagination.module.scss';
+import { useMediaQuery } from 'react-responsive';
 
 const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+  const isMobile = useMediaQuery({ maxWidth: 576 });
   const renderPageElements = () => {
     const elements: PageElement[] = generatePageElements(
       currentPage,
       totalPages,
-      onPageChange
+      onPageChange,
+      isMobile
     );
     return elements.map((element) => {
       if (element.isEllipsis) {

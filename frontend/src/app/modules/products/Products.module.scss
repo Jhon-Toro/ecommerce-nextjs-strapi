@@ -1,14 +1,12 @@
-// Products.module.scss
 @use '@/styles/utils' as utils;
 
 .products {
     display: grid;
     grid-template-areas:
         "filters products";
+    gap: utils.pxToRem(8px);
     @include utils.container();
-    gap: 0.5rem;
 
-    // Hide the toggle button on larger screens
     .filterToggleButton {
         display: none;
         @include utils.media-ltlg() {
@@ -29,30 +27,34 @@
         @include utils.media-ltlg() {
             position: fixed;
             top: 0;
-            left: -100%; // Hidden by default
+            left: -100%;
             width: 100%;
             height: 100%;
             background-color: #fff;
-            z-index: 1000; // Above all other content
+            z-index: 1000;
             transition: left 0.3s ease-in-out;
             overflow-y: auto;
         }
 
         &.filtersOpen {
             @include utils.media-ltlg() {
-                left: 0; // Slide in when open
+                left: 0;
             }
         }
     }
 
     &__cards {
         grid-area: products;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: utils.pxToRem(60px);
         &__product {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             justify-items: center;
-            gap: 1rem;
+            gap: utils.pxToRem(26px);
+            width: max-content;
 
             @include utils.media-lg() {
                 grid-template-columns: repeat(2, 1fr);
@@ -61,12 +63,12 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             @include utils.media-xs() {
-                grid-template-columns: repeat(1, 1fr);
+                display: flex;
+                flex-direction: column;
             }
         }
     }
 
-    // On mobile, adjust the grid to only show products when filters are hidden
     @include utils.media-ltlg() {
         grid-template-areas: "products";
         grid-template-columns: 1fr;

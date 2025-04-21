@@ -6,6 +6,7 @@ export type FilterCriteria = {
   colors: string[];
   sizes: string[];
   dressStyles: string[];
+  sortBy?: string;
 };
 
 export type FilterFunction = (product: Product) => boolean;

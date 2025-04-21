@@ -1,0 +1,97 @@
+@use "src/styles/utils" as utils;
+
+//TODO: pendiente por refactorizar
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: utils.pxToRem(16px) 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: utils.pxToRem(24px);
+
+  .title {
+    font-size: utils.pxToRem(24px);
+    font-weight: 600;
+    color: #000;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: utils.pxToRem(16px);
+  }
+
+  .showing {
+    font-size: utils.pxToRem(14px);
+    color: #666;
+  }
+
+  .sort {
+    display: flex;
+    align-items: center;
+    gap: utils.pxToRem(8px);
+
+    .sortLabel {
+      font-size: utils.pxToRem(14px);
+      color: #666;
+    }
+
+    .sortSelect {
+      font-size: utils.pxToRem(14px);
+      color: #000;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      appearance: none;
+      padding-right: utils.pxToRem(20px);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+
+    .sortSelect:focus {
+      outline: none;
+    }
+  }
+
+  @media (max-width: utils.pxToRem(768px)) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: utils.pxToRem(12px);
+
+    .title {
+      font-size: utils.pxToRem(20px);
+    }
+
+    .info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: utils.pxToRem(8px);
+    }
+
+    .showing,
+    .sortLabel,
+    .sortSelect {
+      font-size: utils.pxToRem(13px);
+    }
+  }
+
+  @media (max-width: utils.pxToRem(480px)) {
+    padding: utils.pxToRem(12px) 0;
+    margin-bottom: utils.pxToRem(16px);
+
+    .title {
+      font-size: utils.pxToRem(18px);
+    }
+
+    .showing,
+    .sortLabel,
+    .sortSelect {
+      font-size: utils.pxToRem(12px);
+    }
+
+    .sort {
+      gap: utils.pxToRem(6px);
+    }
+  }
+}

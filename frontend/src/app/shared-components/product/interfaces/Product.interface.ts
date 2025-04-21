@@ -1,8 +1,9 @@
 export interface Product {
+    date?: number;
     id: number;
     name: string;
     price: number;
-    discountPrice: number | null | undefined;
+    discountPrice?: number | null | undefined;
     rating: number;
     image: string;
     category?: string;
