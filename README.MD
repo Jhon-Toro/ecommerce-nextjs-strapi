@@ -2,6 +2,11 @@
 
 Welcome to the **E-commerce Platform**! This project is a modern, scalable e-commerce application built with a powerful tech stack. The frontend is developed using **Next.js** with **TypeScript** and **modular SASS** for styling, while the backend is powered by **Strapi**, a headless CMS, to manage products, users, and orders.
 
+## Routes for test
+https://shop.labs-develop.cloud/
+https://shop.labs-develop.cloud/products
+https://shop.labs-develop.cloud/product-details/1
+
 ## Testing
 
 start coverage/lcov-report/index.html
